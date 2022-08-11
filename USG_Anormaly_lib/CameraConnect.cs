@@ -1,0 +1,225 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using HalconDotNet;
+using Newtonsoft.Json;
+
+
+namespace USG_Anormaly_lib
+{
+    public enum CameraIdx
+    {
+        Front = 1,
+        Side = 2,
+        Side2 = 3,
+    }
+    public class CameraParam
+    {
+        public int FocusLevel { get; set; } = 190;
+        public int CameraID { get; set; }
+        public bool FlipVertical { get; set; } = false;
+        public bool FlipHorizontal { get; set;} = false;
+    }
+    public class CameraParamAll
+    {
+        public Dictionary<CameraIdx,CameraParam> param { get; set; }
+        
+        public CameraParamAll()
+        {
+            param = new Dictionary<CameraIdx, CameraParam>();
+            param[CameraIdx.Front] = new CameraParam();
+            param[CameraIdx.Side] = new CameraParam();
+
+            param[CameraIdx.Front].CameraID = 1;
+            param[CameraIdx.Side].CameraID = 2;
+
+
+        }
+        public void loadConfig()
+        {
+            if(!File.Exists(CameraConfigPath.cameraParam))
+            {
+                saveConfig();
+            }
+            string data = File.ReadAllText(CameraConfigPath.cameraParam);
+            param = JsonConvert.DeserializeObject<Dictionary<CameraIdx,CameraParam>>(data);
+        }
+        public void saveConfig()
+        {
+            string serialize = JsonConvert.SerializeObject(param,Formatting.Indented);
+            File.WriteAllText(CameraConfigPath.cameraParam,serialize);
+        }
+    }
+    public class CamCalibration
+    {
+        public HTuple camPose;
+        public HTuple calParam;
+        public CamCalibration()
+        {
+            camPose = new HTuple(-0.225425, -0.161473, 0.488293, 358.892, 0.444085, 359.778, 0);
+            calParam = new HTuple("area_scan_division", 0.0038423, 2015.9, 1.3992e-06, 1.4e-06, 1296.68, 928.763, 2592, 1944);
+        }
+        public void load()
+        {
+            HTuple _calParam = new HTuple();
+            HTuple _camPose = new HTuple();
+            if(!File.Exists(CameraConfigPath.cameraCalibrate[0]) && !File.Exists(CameraConfigPath.cameraCalibrate[1]))
+            {
+                return;
+            }
+            try
+            {
+                HOperatorSet.ReadCamPar(CameraConfigPath.cameraCalibrate[0], out _calParam);
+                HOperatorSet.ReadPose(CameraConfigPath.cameraCalibrate[1], out _camPose);
+                camPose = _camPose;
+                calParam = _calParam;
+            }
+            catch (Exception ex)
+            {
+                camPose = null;
+                calParam  = null;
+            }
+        }
+        public void uploadCalParam(string path)
+        {
+            try
+            {
+                if (!File.Exists(path))
+                    throw new Exception("File not found !!!");
+                HTuple _calParam = new HTuple();
+                HOperatorSet.ReadCamPar(path, out _calParam);
+                HOperatorSet.WriteCamPar(_calParam, CameraConfigPath.cameraCalibrate[0]);
+                calParam = _calParam;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Cannot Read calibrate parameter file !!!");
+            }
+        }
+        public void uploadCamPose(string path)
+        {
+            try
+            {
+                if (!File.Exists(path))
+                    throw new Exception("File not found !!!");
+                HTuple _camPose = new HTuple();
+                HOperatorSet.ReadPose(path, out _camPose);
+                HOperatorSet.WritePose(_camPose, CameraConfigPath.cameraCalibrate[1]);
+                calParam = _camPose;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Cannot Read camera pose file !!!");
+            }
+        }
+    }
+    public class ueyeCameraConnect
+    {
+        HTuple _acqHandle;
+        bool _camera_IsOpen = false;
+        public HTuple AcqHandle
+        {
+            get
+            {
+                return _acqHandle;
+            }
+        }
+        public bool camera_IsOpen
+        {
+            get { return _camera_IsOpen; }
+        }
+        CameraParam camParam = new CameraParam();
+        public bool OpenFrameGraber(CameraIdx idx)
+        {
+            if (_camera_IsOpen)
+                return true;
+            CameraParamAll paramAll = new CameraParamAll();
+            paramAll.loadConfig();
+            camParam = paramAll.param[idx];
+
+            try
+            {
+                _acqHandle = new HTuple();
+                HOperatorSet.OpenFramegrabber("uEye", 1, 1, 0, 0, 0, 0,
+                                              "default", 8, "default", -1,
+                                              "false", "default", camParam.CameraID.ToString(), 0, -1, out _acqHandle);
+
+
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_horizontal", camParam.FlipHorizontal? "true" : "false");
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_vertical", camParam.FlipVertical ? "true" : "false");
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "focus", camParam.FocusLevel);
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "grab_timeout", 10000);
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "image_format", "2592 x 1944  (5M)");
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "white_balance", "disable");
+                HOperatorSet.GrabImageStart(_acqHandle, -1);
+                _camera_IsOpen = true;
+            }
+            catch (Exception e)
+            {
+                try
+                {
+                    if (_acqHandle != null)
+                    {
+                        HOperatorSet.CloseFramegrabber(_acqHandle);
+                        _acqHandle.Dispose();
+                        _camera_IsOpen = false;
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+                _acqHandle = null;
+                _camera_IsOpen =false;
+            }
+            return camera_IsOpen;
+        }
+        public void closeCamera()
+        {
+            if (_camera_IsOpen)
+            {
+                if(_acqHandle != null)
+                {
+                    HOperatorSet.CloseFramegrabber(_acqHandle);
+                    _acqHandle.Dispose();
+                    _camera_IsOpen = false;
+                }
+            }
+        }
+        public HObject grabImg()
+        {
+            HObject img = new HObject();
+            HOperatorSet.GrabImageAsync(out img, _acqHandle, -1);
+            return img;
+        }
+
+        public void updateSetting(CameraParam param)
+        {
+            if (!_camera_IsOpen)
+            {
+                return;
+            }
+        
+            if(camParam.FlipHorizontal != param.FlipHorizontal)
+            {
+                camParam.FlipHorizontal = param.FlipHorizontal;
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_horizontal", camParam.FlipHorizontal ? "true" : "false");
+            }
+            if(camParam.FlipVertical != param.FlipVertical)
+            {
+                camParam.FlipVertical = param.FlipVertical;
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_vertical", camParam.FlipVertical ? "true" : "false");
+            }
+            if(camParam.FocusLevel != param.FocusLevel)
+            {
+                camParam.FocusLevel = param.FocusLevel;
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "focus", camParam.FocusLevel);
+            }
+           
+        }
+    }
+
+}

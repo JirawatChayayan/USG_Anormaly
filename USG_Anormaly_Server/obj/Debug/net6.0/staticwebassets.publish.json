@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "PLWKjS8eDaqLjm9V5JZbVBoFR5vGoiJbcpylCju2cD8=",
+  "Source": "USG_Anormaly_Server",
+  "BasePath": "_content/USG_Anormaly_Server",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "USG_Anormaly_Server\\wwwroot",
+      "Source": "USG_Anormaly_Server",
+      "ContentRoot": "C:\\Users\\UTL_VISION\\Desktop\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\",
+      "BasePath": "_content/USG_Anormaly_Server",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

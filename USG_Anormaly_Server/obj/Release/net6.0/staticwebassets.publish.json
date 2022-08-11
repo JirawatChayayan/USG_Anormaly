@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "i2zU/jzLPEvXd0n+R2XRytTbxaW8rIP1ClP1ORUkVWI=",
+  "Source": "USG_Anormaly_Server",
+  "BasePath": "_content/USG_Anormaly_Server",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "USG_Anormaly_Server\\wwwroot",
+      "Source": "USG_Anormaly_Server",
+      "ContentRoot": "D:\\USG\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\",
+      "BasePath": "_content/USG_Anormaly_Server",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\USG\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\SPADE-pytorch-master.zip",
+      "SourceId": "USG_Anormaly_Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\USG\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\",
+      "BasePath": "_content/USG_Anormaly_Server",
+      "RelativePath": "SPADE-pytorch-master.zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\SPADE-pytorch-master.zip"
+    },
+    {
+      "Identity": "D:\\USG\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\USG (2).zip",
+      "SourceId": "USG_Anormaly_Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\USG\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\",
+      "BasePath": "_content/USG_Anormaly_Server",
+      "RelativePath": "USG (2).zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\USG (2).zip"
+    },
+    {
+      "Identity": "D:\\USG\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\USG.zip",
+      "SourceId": "USG_Anormaly_Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\USG\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\",
+      "BasePath": "_content/USG_Anormaly_Server",
+      "RelativePath": "USG.zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\USG.zip"
+    }
+  ]
+}

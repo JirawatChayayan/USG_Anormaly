@@ -1,0 +1,11 @@
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\USG_Anormaly_FileUploadService.exe
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\appsettings.Development.json
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\appsettings.json
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\USG_Anormaly_FileUploadService.dll
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\USG_Anormaly_FileUploadService.deps.json
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\USG_Anormaly_FileUploadService.runtimeconfig.json
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\USG_Anormaly_FileUploadService.pdb
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\UTL_VISION\source\repos\USG_Anormaly\USG_Anormaly_FileUploadService\obj\Release\net6.0\win-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "66fe1991-7b9f-45a1-b245-15fcba53a9c7": {
+      "ProjectGuid": "66fe1991-7b9f-45a1-b245-15fcba53a9c7",
+      "DisplayName": "USG_Anormaly_Server",
+      "ColorIndex": 0
+    },
+    "ab5dc173-24ab-449e-a379-64ff2ce32fb5": {
+      "ProjectGuid": "ab5dc173-24ab-449e-a379-64ff2ce32fb5",
+      "DisplayName": "USG_Anormaly_lib",
+      "ColorIndex": 1
+    },
+    "dd3b71f9-b51c-4f7a-aa56-c5b487e62c0f": {
+      "ProjectGuid": "dd3b71f9-b51c-4f7a-aa56-c5b487e62c0f",
+      "DisplayName": "USG_Anormaly",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "652063b7-85e7-4261-9c88-edb694ba69ae": {
+      "ProjectGuid": "652063b7-85e7-4261-9c88-edb694ba69ae",
+      "DisplayName": "USG_Anormaly_DL_lib",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

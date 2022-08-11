@@ -1,0 +1,13 @@
+D:\USG\USG_Anormaly\USG_Anormaly_lib\bin\Release\USG_Anormaly_lib.dll
+D:\USG\USG_Anormaly\USG_Anormaly_lib\bin\Release\USG_Anormaly_lib.pdb
+D:\USG\USG_Anormaly\USG_Anormaly_lib\bin\Release\halcondotnet.dll
+D:\USG\USG_Anormaly\USG_Anormaly_lib\bin\Release\hdevenginedotnet.dll
+D:\USG\USG_Anormaly\USG_Anormaly_lib\bin\Release\Newtonsoft.Json.dll
+D:\USG\USG_Anormaly\USG_Anormaly_lib\bin\Release\halcondotnet.xml
+D:\USG\USG_Anormaly\USG_Anormaly_lib\bin\Release\hdevenginedotnet.xml
+D:\USG\USG_Anormaly\USG_Anormaly_lib\bin\Release\Newtonsoft.Json.xml
+D:\USG\USG_Anormaly\USG_Anormaly_lib\obj\Release\USG_Anormaly_lib.csproj.AssemblyReference.cache
+D:\USG\USG_Anormaly\USG_Anormaly_lib\obj\Release\USG_Anormaly_lib.csproj.CoreCompileInputs.cache
+D:\USG\USG_Anormaly\USG_Anormaly_lib\obj\Release\USG_Anormaly_lib.csproj.CopyComplete
+D:\USG\USG_Anormaly\USG_Anormaly_lib\obj\Release\USG_Anormaly_lib.dll
+D:\USG\USG_Anormaly\USG_Anormaly_lib\obj\Release\USG_Anormaly_lib.pdb
