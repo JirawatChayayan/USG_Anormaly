@@ -278,6 +278,7 @@
             this.pb_score_histogram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_score_histogram.TabIndex = 8;
             this.pb_score_histogram.TabStop = false;
+            this.pb_score_histogram.Tag = "Please Select . . .";
             // 
             // lb_camera
             // 

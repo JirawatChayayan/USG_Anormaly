@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="halcondotnet">
       <HintPath>C:\Program Files\MVTec\HALCON-20.11-Steady\bin\dotnet35\halcondotnet.dll</HintPath>
@@ -42,8 +45,12 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PixelFormatsConverter">
+      <HintPath>C:\Users\UTL_VISION\Desktop\JToolBox\bin\Debug\PixelFormatsConverter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -58,11 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dl_anomaly_detection_workflow.cs" />
+    <Compile Include="DL_Inference.cs" />
     <Compile Include="DL_Training.cs" />
     <Compile Include="PathProcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System\Drawing\Rectangle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

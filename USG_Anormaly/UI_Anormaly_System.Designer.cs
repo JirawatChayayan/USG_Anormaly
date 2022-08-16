@@ -32,9 +32,11 @@
             this.bt_camera_setting = new System.Windows.Forms.Button();
             this.bt_anormaly_training = new System.Windows.Forms.Button();
             this.bt_anormaly_testing = new System.Windows.Forms.Button();
+            this.bt_TrainingStatus = new System.Windows.Forms.Button();
             this.uI_HomePage1 = new USG_Anormaly.UI_HomePage();
             this.uI_CameraSetting1 = new USG_Anormaly.UI_CameraSetting();
             this.uI_Training1 = new USG_Anormaly.UI_Training();
+            this.uI_CurrentServerState1 = new USG_Anormaly.UI_CurrentServerState();
             this.SuspendLayout();
             // 
             // bt_home
@@ -79,13 +81,25 @@
             // 
             this.bt_anormaly_testing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_anormaly_testing.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.bt_anormaly_testing.Location = new System.Drawing.Point(7, 158);
+            this.bt_anormaly_testing.Location = new System.Drawing.Point(7, 208);
             this.bt_anormaly_testing.Name = "bt_anormaly_testing";
             this.bt_anormaly_testing.Size = new System.Drawing.Size(73, 44);
             this.bt_anormaly_testing.TabIndex = 0;
             this.bt_anormaly_testing.Text = "Anormaly Testing";
             this.bt_anormaly_testing.UseVisualStyleBackColor = true;
             this.bt_anormaly_testing.Click += new System.EventHandler(this.bt_menu);
+            // 
+            // bt_TrainingStatus
+            // 
+            this.bt_TrainingStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_TrainingStatus.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.bt_TrainingStatus.Location = new System.Drawing.Point(7, 158);
+            this.bt_TrainingStatus.Name = "bt_TrainingStatus";
+            this.bt_TrainingStatus.Size = new System.Drawing.Size(73, 44);
+            this.bt_TrainingStatus.TabIndex = 0;
+            this.bt_TrainingStatus.Text = "Training Status";
+            this.bt_TrainingStatus.UseVisualStyleBackColor = true;
+            this.bt_TrainingStatus.Click += new System.EventHandler(this.bt_menu);
             // 
             // uI_HomePage1
             // 
@@ -108,10 +122,18 @@
             this.uI_Training1.Size = new System.Drawing.Size(448, 595);
             this.uI_Training1.TabIndex = 3;
             // 
+            // uI_CurrentServerState1
+            // 
+            this.uI_CurrentServerState1.Location = new System.Drawing.Point(84, 2);
+            this.uI_CurrentServerState1.Name = "uI_CurrentServerState1";
+            this.uI_CurrentServerState1.Size = new System.Drawing.Size(448, 595);
+            this.uI_CurrentServerState1.TabIndex = 4;
+            // 
             // UI_Anormaly_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bt_TrainingStatus);
             this.Controls.Add(this.bt_anormaly_testing);
             this.Controls.Add(this.bt_anormaly_training);
             this.Controls.Add(this.bt_camera_setting);
@@ -119,6 +141,7 @@
             this.Controls.Add(this.uI_HomePage1);
             this.Controls.Add(this.uI_CameraSetting1);
             this.Controls.Add(this.uI_Training1);
+            this.Controls.Add(this.uI_CurrentServerState1);
             this.Name = "UI_Anormaly_System";
             this.Size = new System.Drawing.Size(534, 600);
             this.ResumeLayout(false);
@@ -134,5 +157,7 @@
         private UI_HomePage uI_HomePage1;
         private UI_CameraSetting uI_CameraSetting1;
         private UI_Training uI_Training1;
+        private System.Windows.Forms.Button bt_TrainingStatus;
+        private UI_CurrentServerState uI_CurrentServerState1;
     }
 }

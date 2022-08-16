@@ -41,8 +41,8 @@
             this.pb_sample_side2 = new System.Windows.Forms.PictureBox();
             this.pb_sample_front = new System.Windows.Forms.PictureBox();
             this.uI_trainingResult_front = new USG_Anormaly.UI_trainingResult();
-            this.uI_trainingResult_side1 = new USG_Anormaly.UI_trainingResult();
             this.uI_trainingResult_side2 = new USG_Anormaly.UI_trainingResult();
+            this.uI_trainingResult_side1 = new USG_Anormaly.UI_trainingResult();
             ((System.ComponentModel.ISupportInitialize)(this.pb_sample_side1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_sample_side2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_sample_front)).BeginInit();
@@ -177,19 +177,19 @@
             this.uI_trainingResult_front.Size = new System.Drawing.Size(1575, 542);
             this.uI_trainingResult_front.TabIndex = 12;
             // 
-            // uI_trainingResult_side1
-            // 
-            this.uI_trainingResult_side1.Location = new System.Drawing.Point(323, 2);
-            this.uI_trainingResult_side1.Name = "uI_trainingResult_side1";
-            this.uI_trainingResult_side1.Size = new System.Drawing.Size(1575, 542);
-            this.uI_trainingResult_side1.TabIndex = 12;
-            // 
             // uI_trainingResult_side2
             // 
             this.uI_trainingResult_side2.Location = new System.Drawing.Point(323, 2);
             this.uI_trainingResult_side2.Name = "uI_trainingResult_side2";
             this.uI_trainingResult_side2.Size = new System.Drawing.Size(1575, 542);
             this.uI_trainingResult_side2.TabIndex = 12;
+            // 
+            // uI_trainingResult_side1
+            // 
+            this.uI_trainingResult_side1.Location = new System.Drawing.Point(323, 2);
+            this.uI_trainingResult_side1.Name = "uI_trainingResult_side1";
+            this.uI_trainingResult_side1.Size = new System.Drawing.Size(1575, 542);
+            this.uI_trainingResult_side1.TabIndex = 12;
             // 
             // frmModelDetail
             // 

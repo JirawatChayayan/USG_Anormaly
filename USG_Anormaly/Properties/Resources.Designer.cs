@@ -83,6 +83,36 @@ namespace USG_Anormaly.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MicrosoftTeams_image__19_ {
+            get {
+                object obj = ResourceManager.GetObject("MicrosoftTeams-image (19)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MicrosoftTeams_image__20_ {
+            get {
+                object obj = ResourceManager.GetObject("MicrosoftTeams-image (20)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MicrosoftTeams_image__21_ {
+            get {
+                object obj = ResourceManager.GetObject("MicrosoftTeams-image (21)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap No_image_available_svg {
             get {
                 object obj = ResourceManager.GetObject("No_image_available.svg", resourceCulture);

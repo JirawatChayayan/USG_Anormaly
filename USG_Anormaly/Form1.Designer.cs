@@ -129,6 +129,7 @@
             this.hs_imgSide.TabIndex = 3;
             this.hs_imgSide.WindowSize = new System.Drawing.Size(392, 364);
             this.hs_imgSide.HMouseDoubleClick += new HalconDotNet.HMouseEventHandler(this.hs_imgSide_HMouseDoubleClick);
+            this.hs_imgSide.Load += new System.EventHandler(this.hs_imgSide_Load);
             // 
             // label1
             // 

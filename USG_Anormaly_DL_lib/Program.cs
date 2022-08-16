@@ -8,6 +8,7 @@ using USG_Anormaly_lib;
 using Newtonsoft.Json;
 using System.IO;
 using System.Diagnostics;
+using HalconDotNet;
 
 namespace USG_Anormaly_DL_lib
 {
@@ -29,13 +30,21 @@ namespace USG_Anormaly_DL_lib
                 level = "WARNING";
             else
                 level = "ERROR";
-            string msgSum = $"{datetime} {level} {msg}";
+            string msgSum = $"{datetime} {level} {identify} {msg}";
             console(msgSum);
+            serverdb(level, $"{identify} {msg}");
         }   
 
         private void console(string message)
         {
             Console.WriteLine(message);
+        }
+        private void serverdb(string level,string msg)
+        {
+            LogTrainingInsertModel log = new LogTrainingInsertModel();
+            log.logLevel = level;
+            log.logMessage = msg;
+            (new ServerInterface()).postTrainingLog(log);
         }
     }
 
@@ -53,6 +62,15 @@ namespace USG_Anormaly_DL_lib
             //    error.msg = "TEST Error";
             //    (new ServerInterface()).setToTrainingFail(error);
             //}
+
+            //HObject img = new HObject();
+
+            //DL_Inference infer = new DL_Inference();
+            //HOperatorSet.ReadImage(out img, @"C:\Users\UTL_VISION\Desktop\TrainingImg\Dataset\ROI\261.jpg");
+            //var result = infer.inference(img, "Model-01", CameraIdx.Front, true);
+
+
+
 
             msgManage.msg("System", "Started", LogLevel.INFO);
 

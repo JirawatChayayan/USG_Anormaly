@@ -1,4 +1,3 @@
-using HalconDotNet;
 
 namespace USG_Anormaly_Server
 {
@@ -51,15 +50,6 @@ namespace USG_Anormaly_Server
             {
                 Directory.CreateDirectory(path);
             }
-        }
-    }
-    public class testHalcon
-    {
-        public HTuple getHost()
-        {
-            HTuple data = new HTuple();
-            HOperatorSet.GetSystem("hostids", out data);
-            return data;
         }
     }
     public class WeatherForecast

@@ -22,11 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="halcondotnet">
-      <HintPath>C:\Program Files\MVTec\HALCON-20.11-Steady\bin\dotnet35\halcondotnet.dll</HintPath>
+    <Reference Include="USG_Anormaly_DL_lib">
+      <HintPath>..\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.dll</HintPath>
     </Reference>
-    <Reference Include="hdevenginedotnet">
-      <HintPath>C:\Program Files\MVTec\HALCON-20.11-Steady\bin\dotnet35\hdevenginedotnet.dll</HintPath>
+    <Reference Include="USG_Anormaly_lib">
+      <HintPath>..\USG_Anormaly_lib\bin\Debug\USG_Anormaly_lib.dll</HintPath>
     </Reference>
   </ItemGroup>
 

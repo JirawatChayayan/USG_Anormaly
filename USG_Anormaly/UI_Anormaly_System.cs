@@ -52,7 +52,7 @@ namespace USG_Anormaly
         {
             get 
             {
-                return (new Button[] { bt_home, bt_camera_setting, bt_anormaly_training, bt_anormaly_testing });
+                return (new Button[] { bt_home, bt_camera_setting, bt_anormaly_training, bt_anormaly_testing,bt_TrainingStatus });
             }
         }
         Color higlightColor = SystemColors.Highlight;
@@ -213,20 +213,32 @@ namespace USG_Anormaly
             Button bt = (Button)sender;
             changeColor(bt);
             uI_Training1.stopStartFetchdata(false);
+            uI_CurrentServerState1.stopFetch();
             if (bt.Name == bt_home.Name)
             {
                 uI_HomePage1.BringToFront();
             }
-            if(bt.Name==bt_camera_setting.Name)
+            else if(bt.Name==bt_camera_setting.Name)
             {
                 uI_CameraSetting1.BringToFront();
             }
-            if(bt.Name==bt_anormaly_training.Name)
+            else if(bt.Name==bt_anormaly_training.Name)
             {
                 uI_Training1.BringToFront();
                 uI_Training1.update_imgPath();
                 uI_Training1.stopStartFetchdata(true);
             }
+            else if(bt.Name == bt_TrainingStatus.Name)
+            {
+                uI_CurrentServerState1.ShowTab();
+                uI_CurrentServerState1.BringToFront();
+            }
+            else if(bt.Name == bt_anormaly_testing.Name)
+            {
+                frmTestingModel frm = new frmTestingModel();
+                frm.ShowDialog();
+            }
+            
         }
     }
 }

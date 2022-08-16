@@ -14,8 +14,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.7",
           "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.2.3",
-          "halcondotnet": "20.11.2.0",
-          "hdevenginedotnet": "20.11.2.0"
+          "USG_Anormaly_DL_lib": "1.0.0.0",
+          "USG_Anormaly_lib": "1.0.0.0"
         },
         "runtime": {
           "USG_Anormaly_Server.dll": {}
@@ -493,6 +493,22 @@
           }
         }
       },
+      "USG_Anormaly_DL_lib/1.0.0.0": {
+        "runtime": {
+          "USG_Anormaly_DL_lib.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "USG_Anormaly_lib/1.0.0.0": {
+        "runtime": {
+          "USG_Anormaly_lib.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "halcondotnet/20.11.2.0": {
         "runtime": {
           "halcondotnet.dll": {
@@ -501,11 +517,11 @@
           }
         }
       },
-      "hdevenginedotnet/20.11.2.0": {
+      "RestSharp/106.1.0.0": {
         "runtime": {
-          "hdevenginedotnet.dll": {
-            "assemblyVersion": "20.11.2.0",
-            "fileVersion": "20.11.2.0"
+          "RestSharp.dll": {
+            "assemblyVersion": "106.1.0.0",
+            "fileVersion": "106.1.0.0"
           }
         }
       }
@@ -867,12 +883,22 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
+    "USG_Anormaly_DL_lib/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "USG_Anormaly_lib/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "halcondotnet/20.11.2.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "hdevenginedotnet/20.11.2.0": {
+    "RestSharp/106.1.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

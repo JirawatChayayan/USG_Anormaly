@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "USG_Anormaly_Server", "USG_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USG_Anormaly_DL_lib", "USG_Anormaly_DL_lib\USG_Anormaly_DL_lib.csproj", "{652063B7-85E7-4261-9C88-EDB694BA69AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRTest", "SignalRTest\SignalRTest.csproj", "{95EAC513-4047-455A-96B7-2A54893378E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{652063B7-85E7-4261-9C88-EDB694BA69AE}.Release|x64.Build.0 = Release|Any CPU
 		{652063B7-85E7-4261-9C88-EDB694BA69AE}.Release|x86.ActiveCfg = Release|Any CPU
 		{652063B7-85E7-4261-9C88-EDB694BA69AE}.Release|x86.Build.0 = Release|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Debug|x64.Build.0 = Debug|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Debug|x86.Build.0 = Debug|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Release|x64.ActiveCfg = Release|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Release|x64.Build.0 = Release|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Release|x86.ActiveCfg = Release|Any CPU
+		{95EAC513-4047-455A-96B7-2A54893378E5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

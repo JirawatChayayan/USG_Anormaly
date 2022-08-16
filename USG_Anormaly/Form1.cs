@@ -233,5 +233,10 @@ namespace USG_Anormaly
         {
 
         }
+
+        private void hs_imgSide_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

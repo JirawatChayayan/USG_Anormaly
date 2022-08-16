@@ -437,20 +437,7 @@ namespace USG_Anormaly_DL_lib
             HOperatorSet.WriteDlModel(DLModelHandle, pathModelSave.model);
 
 
-            if (ClassificationThresholdIndex != null)
-            {
-                try
-                {
-                    ClassificationThresholdIndex.Dispose();
-                }
-                catch (Exception ex)
-                {
 
-                }
-            }
-            GenParamDisplay.Dispose();
-            GenParamWindowDict.Dispose();
-            MetaData.Dispose();
 
             #region SaveResultDL
 
@@ -480,6 +467,22 @@ namespace USG_Anormaly_DL_lib
             Hwin_pie_charts_precision.Dispose();
             Hwin_pie_charts_recall.Dispose();
             Hwin_absolute_confusion_matrix.Dispose();
+
+            if (ClassificationThresholdIndex != null)
+            {
+                try
+                {
+                    ClassificationThresholdIndex.Dispose();
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            GenParamDisplay.Dispose();
+            GenParamWindowDict.Dispose();
+            MetaData.Dispose();
+
             #endregion
 
             #region ImageSampleResize

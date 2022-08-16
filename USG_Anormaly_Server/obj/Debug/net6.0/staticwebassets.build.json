@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LOWnFe3jQXbSj7hfAYrh64Z02DaPwhk1x6J6c+P0B9w=",
+  "Hash": "qKhcdXooaDlvFXZzUR2yfW/OWlFyB8gJ/+vCiXaB0g4=",
   "Source": "USG_Anormaly_Server",
   "BasePath": "_content/USG_Anormaly_Server",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "USG_Anormaly_Server\\wwwroot",
       "Source": "USG_Anormaly_Server",
-      "ContentRoot": "C:\\Users\\UTL_VISION\\Desktop\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\",
+      "ContentRoot": "D:\\GitHub\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\",
       "BasePath": "_content/USG_Anormaly_Server",
       "Pattern": "**"
     }

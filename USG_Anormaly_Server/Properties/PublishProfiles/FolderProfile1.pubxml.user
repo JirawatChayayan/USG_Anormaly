@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\NetcoreApp</_PublishTargetUrl>
+    <History>True|2022-08-15T08:23:50.9318602Z;True|2022-08-15T15:15:17.5629338+07:00;False|2022-08-15T15:13:23.0296794+07:00;False|2022-08-15T15:13:05.4604704+07:00;True|2022-08-15T15:09:15.7555533+07:00;True|2022-08-13T11:11:16.5781096+07:00;True|2022-08-13T09:52:57.3105970+07:00;True|2022-08-12T11:50:30.7687484+07:00;True|2022-08-12T10:23:40.7779766+07:00;</History>
+  </PropertyGroup>
+</Project>

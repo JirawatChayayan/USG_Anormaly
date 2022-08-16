@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Web;
 
 namespace USG_Anormaly_lib
 {
@@ -179,6 +180,64 @@ namespace USG_Anormaly_lib
         public HyperDLParam hyperDLParam { get; set; }
     }
 
+
+    public class LogTrainingInsertModel
+    {
+        public string logMessage { get; set; }
+        public string logLevel { get; set; }
+    }
+
+    public class LogInferenceInsertModel
+    {
+        public string clientId { get; set; }
+        public string modelName { get; set; }
+        public bool result { get; set; }
+        public string rejectPosition { get; set; }
+        public string camera { get; set; }
+        public double processTime { get; set; }
+        public string remark { get; set; }
+    }
+
+    public class LogTrainingModel
+    {
+        public string logMessage { get; set; }
+        public string logLevel { get; set; }
+        public DateTime timeStamp { get; set; }
+    }
+
+    public class LogInferenceModel
+    {
+        public string clientId { get; set; }
+        public string modelName { get; set; }
+        public bool result { get; set; }
+        public string camera { get; set; }
+        public double processTime { get; set; }
+        public string rejectPosition { get; set; }
+        public string remark { get; set; }
+        public DateTime timeStamp { get; set; }
+    }
+
+    public class ImageSize
+    {
+        public int Width { get; set; }
+        public int Height { get; set; }
+    }
+    public class DL_InferenceResult
+    {
+        public string anormalyClass { get; set; }
+        public double anormalyScore { get; set; }
+        public string b64ImgRegion { get; set; }
+        public string b64ImgDisp { get; set; } = null;
+        public ImageSize trainingImgSize { get; set; }
+    }
+
+    public class AIInferenceModel
+    {
+        public string b64Img { get; set; }
+        public string recipe { get; set; }
+        public CameraIdx CameraIdx { get; set; }
+        public bool reqImgDisplay { get; set; } = false;
+    }
 
     public class ServerInterface
     {
@@ -426,5 +485,113 @@ namespace USG_Anormaly_lib
             }
             return null;
         }
+
+        public void postInferLog(LogInferenceInsertModel insertLog)
+        {
+            try
+            {
+                ServerConfig serverConfig = new ServerConfig();
+                serverConfig.loadConfig();
+                var client = new RestClient($"{serverConfig.serverPath}/Logging/log-inference");
+                client.Timeout = 3000;
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Content-Type", "application/json");
+                var body = JsonConvert.SerializeObject(insertLog);
+                request.AddParameter("application/json", body, ParameterType.RequestBody);
+                IRestResponse response = client.Execute(request);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        public void postTrainingLog(LogTrainingInsertModel insertLog)
+        {
+            try
+            {
+                ServerConfig serverConfig = new ServerConfig();
+                serverConfig.loadConfig();
+                var client = new RestClient($"{serverConfig.serverPath}/Logging/log-training");
+                client.Timeout = 3000;
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Content-Type", "application/json");
+                var body = JsonConvert.SerializeObject(insertLog);
+                request.AddParameter("application/json", body, ParameterType.RequestBody);
+                IRestResponse response = client.Execute(request);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public List<LogInferenceModel> getLogInfer(DateTime fromDate,DateTime toDate)
+        {
+            if (fromDate == null)
+                throw new ArgumentNullException("fromdate parameter is require !!!!");
+            if(toDate == null)
+            {
+                toDate = DateTime.Now;
+            }
+            ServerConfig serverConfig = new ServerConfig();
+            serverConfig.loadConfig();
+            //http://localhost/usg_mvi_anormaly/Logging/log-inference?fromDate=10-10-22&toDate=11-10-22
+            string fromFormat = $"{fromDate.Day}-{fromDate.Month}-{fromDate.Year} {fromDate.TimeOfDay.Hours}:{fromDate.TimeOfDay.Minutes}:{fromDate.TimeOfDay.Seconds}";
+            string toFormat = $"{toDate.Day}-{toDate.Month}-{toDate.Year} {toDate.TimeOfDay.Hours}:{toDate.TimeOfDay.Minutes}:{toDate.TimeOfDay.Seconds}";
+            var client = new RestClient($"{serverConfig.serverPath}/Logging/log-inference?fromDate={fromDate}&toDate={toDate}");
+            client.Timeout = 3000;
+            var request = new RestRequest(Method.GET);
+            request.AddQueryParameter("fromDate", fromDate.ToString());
+            request.AddQueryParameter("toDate", toDate.ToString());
+            IRestResponse response = client.Execute(request);
+            if(response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<List<LogInferenceModel>>(response.Content);
+            }
+            return null;
+        }
+        public List<LogTrainingModel> getLogTraining(DateTime fromDate, DateTime toDate)
+        {
+            if (fromDate == null)
+                throw new ArgumentNullException("fromdate parameter is require !!!!");
+            if (toDate == null)
+            {
+                toDate = DateTime.Now;
+            }
+            ServerConfig serverConfig = new ServerConfig();
+            serverConfig.loadConfig();
+            //http://localhost/usg_mvi_anormaly/Logging/log-inference?fromDate=10-10-22&toDate=11-10-22
+            string fromFormat = fromDate.ToString("yyyy-MM-dd HH:mm:ss"); //$"{fromDate.Year}-{fromDate.Month}-{fromDate.Day} {fromDate.TimeOfDay.Hours}:{fromDate.TimeOfDay.Minutes}:{fromDate.TimeOfDay.Seconds}";
+            string toFormat = toDate.ToString("yyyy-MM-dd HH:mm:ss");//$"{toDate.Year}-{toDate.Month}-{toDate} {toDate.TimeOfDay.Hours}:{toDate.TimeOfDay.Minutes}:{toDate.TimeOfDay.Seconds}";
+            var client = new RestClient($"{serverConfig.serverPath}/Logging/log-training?fromDate={HttpUtility.UrlEncode(fromFormat)}&toDate={HttpUtility.UrlEncode(toFormat)}");
+            client.Timeout = 3000;
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<List<LogTrainingModel>>(response.Content);
+            }
+            return null;
+        }
+
+        public DL_InferenceResult inference(AIInferenceModel dataItem)
+        {
+            ServerConfig serverConfig = new ServerConfig();
+            serverConfig.loadConfig();
+            var client = new RestClient($"{serverConfig.serverPath}/AIInference");
+            client.Timeout = 10000;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Type", "application/json");
+
+            var body = JsonConvert.SerializeObject(dataItem);
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            if(response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<DL_InferenceResult>(response.Content);
+            }
+            throw new Exception(response.Content);
+        }
+
     }
 }

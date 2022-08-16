@@ -22,6 +22,101 @@ namespace USG_Anormaly_Server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("USG_Anormaly_Server.Models.db.TblInferenceLog", b =>
+                {
+                    b.Property<int>("Item")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("item");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Item"), 1L, 1);
+
+                    b.Property<bool?>("Activeflag")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasColumnName("activeflag")
+                        .HasDefaultValueSql("((1))");
+
+                    b.Property<string>("Camera")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)")
+                        .HasColumnName("Camera");
+
+                    b.Property<string>("ClientID")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)")
+                        .HasColumnName("clientID");
+
+                    b.Property<string>("ModelName")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("modelName");
+
+                    b.Property<double?>("ProcessTime")
+                        .HasColumnType("float")
+                        .HasColumnName("processTime");
+
+                    b.Property<string>("RejectPosition")
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("rejectPosiotion");
+
+                    b.Property<string>("Remark")
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("remark");
+
+                    b.Property<bool?>("Result")
+                        .HasColumnType("bit")
+                        .HasColumnName("result");
+
+                    b.Property<DateTime?>("TimeStamp")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasColumnName("timeStamp")
+                        .HasDefaultValueSql("(getdate())");
+
+                    b.HasKey("Item");
+
+                    b.ToTable("tbl_inference_log", (string)null);
+                });
+
+            modelBuilder.Entity("USG_Anormaly_Server.Models.db.TblStatusTrainingLog", b =>
+                {
+                    b.Property<int>("Item")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("item");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Item"), 1L, 1);
+
+                    b.Property<bool?>("Activeflag")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasColumnName("activeflag")
+                        .HasDefaultValueSql("((1))");
+
+                    b.Property<string>("LogLevel")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)")
+                        .HasColumnName("logLevel");
+
+                    b.Property<string>("LogMessage")
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("logMessage");
+
+                    b.Property<DateTime?>("TimeStamp")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasColumnName("timeStamp")
+                        .HasDefaultValueSql("(getdate())");
+
+                    b.HasKey("Item");
+
+                    b.ToTable("tbl_status_training_log", (string)null);
+                });
+
             modelBuilder.Entity("USG_Anormaly_Server.Models.db.TblTrainingModelDetail", b =>
                 {
                     b.Property<int>("Item")
@@ -43,8 +138,8 @@ namespace USG_Anormaly_Server.Migrations
                         .HasColumnName("errorRemark");
 
                     b.Property<string>("FrontPath")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)")
                         .HasColumnName("frontPath");
 
                     b.Property<string>("MachineName")
@@ -53,8 +148,8 @@ namespace USG_Anormaly_Server.Migrations
                         .HasColumnName("machineName");
 
                     b.Property<string>("ModelPath")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)")
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)")
                         .HasColumnName("modelPath");
 
                     b.Property<string>("RecipeName")
@@ -63,13 +158,13 @@ namespace USG_Anormaly_Server.Migrations
                         .HasColumnName("recipeName");
 
                     b.Property<string>("SidePath1")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)")
                         .HasColumnName("sidePath1");
 
                     b.Property<string>("SidePath2")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)")
                         .HasColumnName("sidePath2");
 
                     b.Property<DateTime?>("TimeStamp")
@@ -87,8 +182,8 @@ namespace USG_Anormaly_Server.Migrations
                         .HasColumnName("trainingFinish");
 
                     b.Property<string>("TrainingParameter")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)")
                         .HasColumnName("trainingParameter");
 
                     b.Property<int?>("TrainingStatus")

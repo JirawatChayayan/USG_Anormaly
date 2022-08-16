@@ -25,7 +25,17 @@
       "ProjectGuid": "652063b7-85e7-4261-9c88-edb694ba69ae",
       "DisplayName": "USG_Anormaly_DL_lib",
       "ColorIndex": 3
+    },
+    "95eac513-4047-455a-96b7-2a54893378e5": {
+      "ProjectGuid": "95eac513-4047-455a-96b7-2a54893378e5",
+      "DisplayName": "SignalRTest",
+      "ColorIndex": 4
+    },
+    "437f6378-036d-4e65-8477-b9e35794327a": {
+      "ProjectGuid": "437f6378-036d-4e65-8477-b9e35794327a",
+      "DisplayName": "JToolBox",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }

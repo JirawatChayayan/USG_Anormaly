@@ -20,6 +20,8 @@ namespace USG_Anormaly_Server.Models.db
 
         public virtual DbSet<TblTrainingModelDetail> TblTrainingModelDetails { get; set; } = null!;
         public virtual DbSet<TblTrainingStatusDetail> TblTrainingStatusDetails { get; set; } = null!;
+        public virtual DbSet<TblStatusTrainingLog> TblStatusTrainingLogs { get; set; } = null!;
+        public virtual DbSet<TblInferenceLog> TblInferenceLogs { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -125,6 +127,79 @@ namespace USG_Anormaly_Server.Models.db
                     .HasColumnName("updateDate")
                     .HasDefaultValueSql("(getdate())");
                 
+            });
+
+            modelBuilder.Entity<TblStatusTrainingLog>(entity =>
+            {
+                entity.HasKey(e => e.Item);
+
+                //TblStatusTrainingLog
+                entity.ToTable("tbl_status_training_log");
+
+                entity.Property(e => e.Item).HasColumnName("item");
+
+                entity.Property(e => e.LogLevel)
+                    .HasMaxLength(10)
+                    .HasColumnName("logLevel");
+
+                entity.Property(e => e.LogMessage)
+                    .HasMaxLength(4000)
+                    .HasColumnName("logMessage");
+
+                entity.Property(e => e.TimeStamp)
+                    .HasColumnType("datetime")
+                    .HasColumnName("timeStamp")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Activeflag)
+                    .HasColumnName("activeflag")
+                    .HasDefaultValueSql("((1))");
+            });
+
+            modelBuilder.Entity<TblInferenceLog>(entity =>
+            {
+                entity.HasKey(e => e.Item);
+
+                entity.ToTable("tbl_inference_log");
+
+                entity.Property(e => e.Item).HasColumnName("item");
+
+                entity.Property(e => e.ClientID)
+                    .HasMaxLength(15)
+                    .HasColumnName("clientId");
+
+                entity.Property(e => e.ModelName)
+                    .HasMaxLength(50)
+                    .HasColumnName("modelName");
+
+                entity.Property(e => e.Result)
+                    .HasColumnName("result");
+
+                entity.Property(e => e.RejectPosition)
+                    .HasMaxLength(4000)
+                    .HasColumnName("rejectPosiotion");
+
+                entity.Property(e => e.Camera)
+                    .HasMaxLength(15)
+                    .HasColumnName("camera");
+
+                entity.Property(e => e.ProcessTime)
+                    .HasColumnName("processTime");
+
+                entity.Property(e => e.Remark)
+                    .HasMaxLength(4000)
+                    .HasColumnName("remark");
+
+
+                entity.Property(e => e.TimeStamp)
+                    .HasColumnType("datetime")
+                    .HasColumnName("timeStamp")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Activeflag)
+                    .HasColumnName("activeflag")
+                    .HasDefaultValueSql("((1))");
+
             });
 
             OnModelCreatingPartial(modelBuilder);

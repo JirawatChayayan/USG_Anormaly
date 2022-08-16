@@ -56,6 +56,9 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -126,6 +129,12 @@
     <Compile Include="frmModelDetail.Designer.cs">
       <DependentUpon>frmModelDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTestingModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestingModel.Designer.cs">
+      <DependentUpon>frmTestingModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI_Anormaly_System.cs">
@@ -145,6 +154,12 @@
     </Compile>
     <Compile Include="UI_CameraSetting.Designer.cs">
       <DependentUpon>UI_CameraSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_CurrentServerState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_CurrentServerState.Designer.cs">
+      <DependentUpon>UI_CurrentServerState.cs</DependentUpon>
     </Compile>
     <Compile Include="UI_HomePage.cs">
       <SubType>UserControl</SubType>
@@ -170,6 +185,18 @@
     <Compile Include="UI_PretrainImage.Designer.cs">
       <DependentUpon>UI_PretrainImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_result.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_result.Designer.cs">
+      <DependentUpon>UI_result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_testingProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_testingProgressBar.Designer.cs">
+      <DependentUpon>UI_testingProgressBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Training.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,6 +221,9 @@
     <EmbeddedResource Include="frmModelDetail.resx">
       <DependentUpon>frmModelDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTestingModel.resx">
+      <DependentUpon>frmTestingModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -213,6 +243,9 @@
     <EmbeddedResource Include="UI_CameraSetting.resx">
       <DependentUpon>UI_CameraSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI_CurrentServerState.resx">
+      <DependentUpon>UI_CurrentServerState.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI_HomePage.resx">
       <DependentUpon>UI_HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_PretrainImage.resx">
       <DependentUpon>UI_PretrainImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_result.resx">
+      <DependentUpon>UI_result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_testingProgressBar.resx">
+      <DependentUpon>UI_testingProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Training.resx">
       <DependentUpon>UI_Training.cs</DependentUpon>
@@ -277,6 +316,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sample_image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MicrosoftTeams-image %2820%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MicrosoftTeams-image %2819%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MicrosoftTeams-image %2821%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
