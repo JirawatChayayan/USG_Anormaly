@@ -73,7 +73,7 @@ namespace USG_Anormaly
                     return;
                 //var files = Directory.GetFiles(mainPath, "*.png").ToList();
 
-                var filters = new string[] { "jpg", "jpeg", "png", "tiff", "bmp", "hobj" };
+                var filters = new string[] { "jpg", "jpeg", "png", "tiff", "tif", "bmp", "hobj" };
                 var files = GetFilesFrom(mainPath, filters, true);
 
                 images.Clear();

@@ -237,6 +237,11 @@ namespace USG_Anormaly_lib
         public string recipe { get; set; }
         public CameraIdx CameraIdx { get; set; }
         public bool reqImgDisplay { get; set; } = false;
+        public string clientId { get; set; } = Environment.MachineName;
+        public AIInferenceModel()
+        {
+            clientId = Environment.MachineName;
+        }
     }
 
     public class ServerInterface

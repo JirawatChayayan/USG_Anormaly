@@ -9,6 +9,7 @@ using BitmapHImage;
 using System.Drawing;
 using System.IO;
 using System.Drawing.Imaging;
+using Newtonsoft.Json;
 
 namespace USG_Anormaly_DL_lib
 {
@@ -26,14 +27,21 @@ namespace USG_Anormaly_DL_lib
         public ImageSize trainingImgSize { get; set; }
     }
 
+    public class rejectPos
+    {
+        public int R1 { get; set; }
+        public int C1 { get; set; }
+        public int R2 { get; set; }
+        public int C2 { get; set; }
+    }
 
     public class DL_Inference
     {
 
-        public DL_InferenceResult inference(string b64img,string recipeName, CameraIdx idx,bool reqImgPaint = false)
+        public DL_InferenceResult inference(out string posRejectAll,string b64img,string recipeName, CameraIdx idx,bool reqImgPaint = false)
         {
 
-
+            posRejectAll = null;
             DL_InferenceResult result = new DL_InferenceResult();
             //read model
             ModelPath dl_model_path = PathProcess.modelSavePath(recipeName, idx);
@@ -106,6 +114,21 @@ namespace USG_Anormaly_DL_lib
             Bitmap imgROI = (new BitmapHImageConverter()).HImage2Bitmap(imgHRoi);
 
             result.b64ImgRegion = (new ImageConvert()).image2Base64str(imgROI, ImgFormat.png);
+
+            if(result.anormalyClass == "nok")
+            {
+                try
+                {
+                    posRejectAll = JsonConvert.SerializeObject(getRejectPos(ImageROI));
+                }
+                catch (Exception ex)
+                {
+                    posRejectAll = null;
+                }
+            }
+
+
+
             imgROI.Dispose();
 
 
@@ -151,6 +174,33 @@ namespace USG_Anormaly_DL_lib
             AnormalyRegion.Dispose();
             Image.Dispose();
             return result;
+        }
+
+        public List<rejectPos> getRejectPos(HObject img)
+        {
+            HObject reg = new HObject(); reg.GenEmptyObj();
+            HObject regcon = new HObject(); regcon.GenEmptyObj();
+            HOperatorSet.Threshold(img, out reg, 1, 1);
+            HOperatorSet.Connection(reg, out regcon);
+            HTuple row1= new HTuple(),col1 = new HTuple(), row2 = new HTuple(), col2 = new HTuple();
+            HOperatorSet.SmallestRectangle1(regcon, out row1, out col1, out row2, out col2);
+            reg.Dispose();
+            regcon.Dispose();
+            List <rejectPos> posAll = new List<rejectPos>();
+            for (int i=0; i<row1.Length; i++)
+            {
+                rejectPos pos = new rejectPos();
+                pos.R1 = row1[i];
+                pos.C1 = col1[i];
+                pos.R2 = row2[i];
+                pos.C2 = col2[i];
+                posAll.Add(pos);
+            }
+            row1.Dispose();
+            row2.Dispose();
+            col1.Dispose();
+            col2.Dispose();
+            return posAll;
         }
 
         public HObject genImgResult(HObject AnormalyRegion,int ImgWidth,int ImgHeight)

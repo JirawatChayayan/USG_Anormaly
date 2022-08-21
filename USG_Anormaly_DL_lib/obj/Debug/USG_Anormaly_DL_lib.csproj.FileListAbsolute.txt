@@ -63,7 +63,6 @@ E:\MVI_Software\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.c
 E:\MVI_Software\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.CopyComplete
 E:\MVI_Software\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.exe
 E:\MVI_Software\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.pdb
-D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.AssemblyReference.cache
 D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.CoreCompileInputs.cache
 D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\halcondotnet.dll
@@ -78,7 +77,7 @@ D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_lib.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_lib.dll.config
 D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.CopyComplete
 D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.pdb
-D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.exe.config
-D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.exe
-D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.SuggestedBindingRedirects.cache
-D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.exe
+D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.dll.config
+D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.dll
+D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.dll
+D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.AssemblyReference.cache

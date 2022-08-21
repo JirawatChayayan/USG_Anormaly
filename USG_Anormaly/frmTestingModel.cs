@@ -116,7 +116,7 @@ namespace USG_Anormaly
                 string path = dialog.SelectedPath;
                 //List<string> imgPaths = Directory.GetFiles(path,"*.png",SearchOption.AllDirectories).ToList();
 
-                var filters = new string[] { "jpg", "jpeg", "png", "tiff", "bmp", "hobj" };
+                var filters = new string[] { "jpg", "jpeg", "png", "tiff", "tif", "bmp", "hobj" };
                 List<string> imgPaths = GetFilesFrom(path, filters, true);
 
                 if (imgPaths.Count == 0)
@@ -187,6 +187,7 @@ namespace USG_Anormaly
             model.b64Img = (new ImageConvert()).pathImg2Base64str(imgPath,ImgFormat.jpg);
             uI_testingProgressBar1.start();
             uI_testingProgressBar1.BringToFront();
+            uI_result1.reset();
             dimControl(false);
             bgw_test1.RunWorkerAsync(model);
 
@@ -213,7 +214,7 @@ namespace USG_Anormaly
                 sw.Stop();
                 uI_result1.disp(result,sw.Elapsed.TotalMilliseconds);
             }
-            catch
+            catch (Exception ex)
             {
 
             }

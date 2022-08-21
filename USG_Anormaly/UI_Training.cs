@@ -292,7 +292,7 @@ namespace USG_Anormaly
 
             statusDispde de = new statusDispde(statusDisplay);
             de("Starting background process.", LogLevel.INFO);
-            var filters = new string[] { "jpg", "jpeg", "png", "tiff", "bmp", "hobj" };
+            var filters = new string[] { "jpg", "jpeg", "png", "tiff", "tif", "bmp", "hobj" };
             bgw_Upload_data.ReportProgress(0, "List cache file..");
             var listFileFront = GetFilesFrom(TrainingCacheFilePath.frontCachePath, filters, true);
             var listFileSide1 = GetFilesFrom(TrainingCacheFilePath.sideCachePath1, filters, true);

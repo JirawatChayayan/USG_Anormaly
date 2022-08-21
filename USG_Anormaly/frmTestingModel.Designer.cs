@@ -44,9 +44,9 @@
             this.rad_front = new System.Windows.Forms.RadioButton();
             this.pb_imageTest = new HalconDotNet.HSmartWindowControl();
             this.pb_imgResult = new HalconDotNet.HSmartWindowControl();
-            this.uI_testingProgressBar1 = new USG_Anormaly.UI_testingProgressBar();
-            this.uI_result1 = new USG_Anormaly.UI_result();
             this.bgw_test1 = new System.ComponentModel.BackgroundWorker();
+            this.uI_result1 = new USG_Anormaly.UI_result();
+            this.uI_testingProgressBar1 = new USG_Anormaly.UI_testingProgressBar();
             this.panel_cameraIdx.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -236,12 +236,11 @@
             this.pb_imgResult.TabIndex = 12;
             this.pb_imgResult.WindowSize = new System.Drawing.Size(720, 720);
             // 
-            // uI_testingProgressBar1
+            // bgw_test1
             // 
-            this.uI_testingProgressBar1.Location = new System.Drawing.Point(262, 734);
-            this.uI_testingProgressBar1.Name = "uI_testingProgressBar1";
-            this.uI_testingProgressBar1.Size = new System.Drawing.Size(1444, 52);
-            this.uI_testingProgressBar1.TabIndex = 13;
+            this.bgw_test1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgw_test1_DoWork);
+            this.bgw_test1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgw_test1_ProgressChanged);
+            this.bgw_test1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgw_test1_RunWorkerCompleted);
             // 
             // uI_result1
             // 
@@ -250,11 +249,12 @@
             this.uI_result1.Size = new System.Drawing.Size(1444, 52);
             this.uI_result1.TabIndex = 14;
             // 
-            // bgw_test1
+            // uI_testingProgressBar1
             // 
-            this.bgw_test1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgw_test1_DoWork);
-            this.bgw_test1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgw_test1_ProgressChanged);
-            this.bgw_test1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgw_test1_RunWorkerCompleted);
+            this.uI_testingProgressBar1.Location = new System.Drawing.Point(262, 734);
+            this.uI_testingProgressBar1.Name = "uI_testingProgressBar1";
+            this.uI_testingProgressBar1.Size = new System.Drawing.Size(1444, 52);
+            this.uI_testingProgressBar1.TabIndex = 13;
             // 
             // frmTestingModel
             // 
@@ -275,6 +275,9 @@
             this.Controls.Add(this.comboBox_modelList);
             this.Controls.Add(this.pb_imageTest);
             this.Controls.Add(this.pb_imgResult);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmTestingModel";
             this.Text = "frmTestingModel";
             this.panel_cameraIdx.ResumeLayout(false);
