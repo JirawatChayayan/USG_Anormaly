@@ -72,7 +72,6 @@ D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_Serve
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_Server.deps.json
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_Server.runtimeconfig.json
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_Server.dll
-D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\ref\USG_Anormaly_Server.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_Server.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\Humanizer.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\Microsoft.Data.SqlClient.dll
@@ -130,10 +129,8 @@ D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\USG_Anormaly_Serve
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\ref\USG_Anormaly_Server.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\USG_Anormaly_Server.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\USG_Anormaly_Server.genruntimeconfig.cache
-D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_DL_lib.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_lib.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\RestSharp.dll
-D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_DL_lib.pdb
-D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_DL_lib.dll.config
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_lib.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\USG_Anormaly_lib.dll.config
+D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\refint\USG_Anormaly_Server.dll

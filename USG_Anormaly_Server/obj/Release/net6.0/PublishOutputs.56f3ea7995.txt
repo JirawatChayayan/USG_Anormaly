@@ -41,12 +41,9 @@ D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\runtime
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\USG_Anormaly_DL_lib.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\USG_Anormaly_lib.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\halcondotnet.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\RestSharp.dll
-D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\USG_Anormaly_DL_lib.pdb
-D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\USG_Anormaly_DL_lib.dll.config
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\USG_Anormaly_lib.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\USG_Anormaly_lib.dll.config
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\halcondotnet.xml

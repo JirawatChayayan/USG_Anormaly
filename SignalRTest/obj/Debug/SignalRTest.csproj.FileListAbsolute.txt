@@ -134,6 +134,7 @@ D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Http.Connectio
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Http.dll
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Http.Extensions.dll
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Http.Features.dll
+D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Metadata.dll
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Routing.Abstractions.dll
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Routing.dll
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.SignalR.Client.Core.dll
@@ -191,6 +192,7 @@ D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Http.Connectio
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Http.Connections.Common.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Http.Extensions.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Http.Features.xml
+D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Metadata.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Routing.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.Routing.Abstractions.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\Microsoft.AspNetCore.SignalR.xml
@@ -222,15 +224,16 @@ D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Diagnostics.DiagnosticSource
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Drawing.Common.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.IO.Pipelines.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Memory.xml
+D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Net.WebSockets.WebSocketProtocol.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Numerics.Vectors.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Security.Principal.Windows.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Text.Encodings.Web.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Text.Json.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Threading.Channels.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\GitHub\USG_Anormaly\SignalRTest\bin\Debug\System.ValueTuple.xml
 D:\GitHub\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.csproj.AssemblyReference.cache
-D:\GitHub\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.csproj.SuggestedBindingRedirects.cache
 D:\GitHub\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.Form1.resources
 D:\GitHub\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.Properties.Resources.resources
 D:\GitHub\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.csproj.GenerateResource.cache

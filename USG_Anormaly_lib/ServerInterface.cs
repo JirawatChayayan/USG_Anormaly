@@ -46,11 +46,13 @@ namespace USG_Anormaly_lib
     
     public class ServerConfig
     {
-        public string serverPath { get; set; } 
-        
+        public string serverPath { get; set; }
+        public string serverInferPath { get; set; }
+
         public ServerConfig()
         {
             serverPath = "http://localhost/usg_mvi_anormaly";
+            serverInferPath = "http://localhost:9999/api/infer";
         }
         public void loadConfig()
         {
@@ -61,6 +63,7 @@ namespace USG_Anormaly_lib
             }
             var a = JsonConvert.DeserializeObject<ServerConfig>(File.ReadAllText(path));
             serverPath = a.serverPath.Trim();
+            serverInferPath = a.serverInferPath.Trim();
         }
     }
 
@@ -583,8 +586,8 @@ namespace USG_Anormaly_lib
         {
             ServerConfig serverConfig = new ServerConfig();
             serverConfig.loadConfig();
-            var client = new RestClient($"{serverConfig.serverPath}/AIInference");
-            client.Timeout = 10000;
+            var client = new RestClient($"{serverConfig.serverInferPath}");
+            client.Timeout = 20000;
             var request = new RestRequest(Method.POST);
             request.AddHeader("Content-Type", "application/json");
 

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{652063B7-85E7-4261-9C88-EDB694BA69AE}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>USG_Anormaly_DL_lib</RootNamespace>
     <AssemblyName>USG_Anormaly_DL_lib</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -39,11 +39,15 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="halcondotnet">
+    <Reference Include="halcondotnet, Version=20.11.2.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\MVTec\HALCON-20.11-Steady\bin\dotnet35\halcondotnet.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="hdevenginedotnet">
+      <HintPath>C:\Program Files\MVTec\HALCON-20.11-Steady\bin\dotnet35\hdevenginedotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PixelFormatsConverter">
       <HintPath>C:\Users\UTL_VISION\Desktop\JToolBox\bin\Debug\PixelFormatsConverter.dll</HintPath>
