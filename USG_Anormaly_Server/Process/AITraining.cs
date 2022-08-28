@@ -184,7 +184,7 @@ namespace USG_Anormaly_Server
             {
                 var trainingDetail = JsonConvert.DeserializeObject<UploadFileModel>(result[0].TrainingParameter);
 
-                var filters = new string[] { "jpg", "jpeg", "png", "tiff", "bmp", "hobj" };
+                var filters = new string[] { "jpg", "jpeg", "png", "tiff","tif", "bmp", "hobj" };
                 var frontPathFile = GetFilesFrom(result[0].FrontPath, filters, true);
                 var sidePathFile = GetFilesFrom(result[0].SidePath1, filters, true);
                 var side2PathFile = GetFilesFrom(result[0].SidePath2, filters, true);

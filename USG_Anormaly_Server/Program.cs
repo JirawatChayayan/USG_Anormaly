@@ -2,8 +2,10 @@ global using USG_Anormaly_Server.Models.db;
 global using Microsoft.EntityFrameworkCore;
 global using USG_Anormaly_Server.Hubs;
 
-
+using USG_Anormaly_lib;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.Extensions.FileProviders;
+using USG_Anormaly_Server;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -21,6 +23,8 @@ builder.Services.AddResponseCompression(option =>
 {
     option.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] {"application/octet-stream"});
 });
+
+builder.Services.AddSingleton<IFileProvider>(new PhysicalFileProvider(PathProcess._uploadPath));
 
 var app = builder.Build();
 

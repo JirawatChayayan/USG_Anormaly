@@ -493,7 +493,7 @@ namespace USG_Anormaly_DL_lib
                 datasetPath = PathProcess.side1DatasetFolder(recipeName);
             else if (idx == CameraIdx.Side2)
                 datasetPath = PathProcess.side2DatasetFolder(recipeName);
-            var filters = new string[] { "jpg", "jpeg", "png", "tiff", "bmp", "hobj" };
+            var filters = new string[] { "jpg", "jpeg", "png", "tiff","tif", "bmp", "hobj" };
             var img =  GetFilesFrom(datasetPath, filters, true);
             HObject imgObj = new HObject(); imgObj.GenEmptyObj(); imgObj.Dispose();
             HObject imgObjZoom = new HObject(); imgObjZoom.GenEmptyObj(); imgObjZoom.Dispose();
@@ -508,7 +508,7 @@ namespace USG_Anormaly_DL_lib
             else if (width[0].I > 864 && height[0].I > 640)
                 HOperatorSet.ZoomImageFactor(imgObj, out imgObjZoom, 0.4, 0.4, "constant");
             else
-                imgObj = imgObjZoom;
+                HOperatorSet.ZoomImageFactor(imgObj, out imgObjZoom, 0.8, 0.8, "constant");
 
             HOperatorSet.WriteImage(imgObjZoom, "jpeg", 0, resultImage.sample_image);
             imgObj.Dispose();
@@ -708,41 +708,5 @@ namespace USG_Anormaly_DL_lib
 
     }
 
-    public class ZipProcess
-    {
-        public bool unZip(string zipPath,string destinationPath)
-        {
-            
-            if(!File.Exists(zipPath))
-                return false;
-            if (!Directory.Exists(destinationPath))
-                return false;
 
-            var fileList = Directory.GetFiles(destinationPath,"*",SearchOption.AllDirectories);
-            foreach(var file in fileList)
-            {
-                try
-                {
-                    File.Delete(file);
-                }
-                catch(Exception ex)
-                {
-
-                }
-            }
-
-            ZipFile.ExtractToDirectory(zipPath, destinationPath);
-            Console.WriteLine("Extracted Successfully");
-            return true;
-        }
-        public bool deleteZip(string zipPath)
-        {
-            if(!File.Exists(zipPath))
-            {
-                return false;
-            }
-            File.Delete(zipPath);
-            return true;
-        }
-    }
 }

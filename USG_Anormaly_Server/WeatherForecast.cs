@@ -33,6 +33,15 @@ namespace USG_Anormaly_Server
                 return modelPath;
             }
         }
+        public static string _modelUpload
+        {
+            get
+            {
+                string modelPath = Path.Combine(_mainPath, "ModelUpload");
+                createFolder(modelPath);
+                return modelPath;
+            }
+        }
         public string[] _imageSamplePath(string recipe)
         {
             string path = Path.Combine(_modelPath, "SampleImg");

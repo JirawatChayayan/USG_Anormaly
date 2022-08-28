@@ -203,14 +203,14 @@ namespace USG_Anormaly
                 string path = dialog.SelectedPath;
                 //List<string> imgPaths = Directory.GetFiles(path,"*.png",SearchOption.AllDirectories).ToList();
 
-                var filters = new string[] { "jpg", "jpeg", "png", "tiff", "bmp","hobj" };
+                var filters = new string[] { "jpg", "jpeg", "png", "tif", "tiff", "bmp","hobj" };
                 List<string> imgPaths = GetFilesFrom(path, filters, true);
 
 
                 if (imgPaths.Count == 0)
                 {
                     dispMsg($"Not found image file", LogLevel.Warning);
-                    MessageBox.Show("Not found image format (jpg,jpeg,png,tiff,bmp,hobj).", "Upload Image !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Not found image format (jpg,jpeg,png,tiff,tif,bmp,hobj).", "Upload Image !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 Parallel.ForEach(imgPaths, imgFile =>

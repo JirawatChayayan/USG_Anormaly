@@ -40,3 +40,25 @@ D:\GitHub\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service
 D:\GitHub\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.exe
 D:\GitHub\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.pdb
 D:\GitHub\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.exe.config
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\AnomalyTraining_Service.exe.config
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\AnomalyTraining_Service.exe
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\AnomalyTraining_Service.pdb
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\Newtonsoft.Json.dll
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\USG_Anormaly_DL_lib.dll
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\USG_Anormaly_lib.dll
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\halcondotnet.dll
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\RestSharp.dll
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\Newtonsoft.Json.xml
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\USG_Anormaly_DL_lib.pdb
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\USG_Anormaly_DL_lib.dll.config
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\USG_Anormaly_lib.pdb
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\USG_Anormaly_lib.dll.config
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\halcondotnet.xml
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\bin\Debug\RestSharp.xml
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.csproj.AssemblyReference.cache
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.csproj.SuggestedBindingRedirects.cache
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.exe.config
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.csproj.CoreCompileInputs.cache
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.csproj.CopyComplete
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.exe
+D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.pdb

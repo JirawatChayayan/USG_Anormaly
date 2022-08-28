@@ -84,3 +84,23 @@ D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.
 D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.AssemblyReference.cache
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.dll.config
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.pdb
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\halcondotnet.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\hdevenginedotnet.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\Newtonsoft.Json.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_lib.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\RestSharp.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\halcondotnet.xml
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\hdevenginedotnet.xml
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\Newtonsoft.Json.xml
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\PixelFormatsConverter.xml
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_lib.pdb
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_lib.dll.config
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\RestSharp.xml
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.AssemblyReference.cache
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.CoreCompileInputs.cache
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.csproj.CopyComplete
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\obj\Debug\USG_Anormaly_DL_lib.pdb

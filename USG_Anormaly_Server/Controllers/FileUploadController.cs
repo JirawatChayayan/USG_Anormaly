@@ -1,15 +1,18 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using USG_Anormaly_lib;
 using USG_Anormaly_Server.Models;
+using UploadFileResultModel = USG_Anormaly_lib.UploadFileResultModel;
 
 namespace USG_Anormaly_Server.Controllers
 {
 
-    [Route("usg_mvi_anormaly/[controller]")]
+    
     [ApiController]
     public class FileUploadController : ControllerBase
     {
+        [Route("usg_mvi_anormaly/FileUpload")]
         [HttpPost]
         [RequestFormLimits(MultipartBodyLengthLimit = 2097152000)]
         [RequestSizeLimit(2097152000)]
@@ -37,6 +40,48 @@ namespace USG_Anormaly_Server.Controllers
             {
                 msg = $"file {fName} uploaded",
                 fileName = fName
+            });
+        }
+
+        [Route("usg_mvi_anormaly/FileUpload/UploadTrainedModel")]
+        [HttpPost]
+        [RequestFormLimits(MultipartBodyLengthLimit = 2097152000)]
+        [RequestSizeLimit(2097152000)]
+        public async Task<ActionResult<UploadFileResultModel>> UploadTrainedModel(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("file not selected");
+            var fileSplit = file.FileName.Split('.');
+            string fileType = fileSplit[fileSplit.Length - 1];
+            if (fileType != "zip")
+            {
+                return BadRequest("Please upload only zip file.");
+            }
+            var path = PathProcess._modelUpload;
+            // var unixtime = DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds.ToString().Replace(".", "-");
+            string fName = file.FileName;//Path.GetFileNameWithoutExtension(file.FileName) + fileType;
+
+            path = Path.Combine(path, fName);
+
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            //string unzipPath = Path.Combine(PathProcess._modelPath, Path.GetFileNameWithoutExtension(file.FileName));
+            //if(!Directory.Exists(unzipPath))
+            //    Directory.CreateDirectory(unzipPath);
+
+            ZipProcess zipProcess = new ZipProcess();
+            zipProcess.unZip(path, PathProcess._modelPath);
+            zipProcess.deleteZip(path);
+
+
+
+            return Ok(new UploadFileResultModel
+            {
+                msg = $"file {fName} uploaded",
+                fileName = PathProcess._modelPath+ @"\"+Path.GetFileNameWithoutExtension(file.FileName)
             });
         }
     }
