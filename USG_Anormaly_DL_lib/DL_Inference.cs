@@ -79,6 +79,11 @@ namespace USG_Anormaly_DL_lib
             dlTraining.gen_dl_samples_from_images(Image, out DLSample);
             dlTraining.preprocess_dl_samples(DLSample, DLPreprocessParam);
 
+            HTuple DLDevice = new HTuple();
+            HOperatorSet.QueryAvailableDlDevices((new HTuple("runtime")).TupleConcat("id"), (new HTuple("cpu")).TupleConcat(0), out DLDevice);
+            HOperatorSet.SetDlModelParam(DLModelHandle, "device", DLDevice);
+
+
             // Predict
             HOperatorSet.ApplyDlModel(DLModelHandle, DLSample, new HTuple(), out DLResult);
             Task T1 = Task.Run(() =>

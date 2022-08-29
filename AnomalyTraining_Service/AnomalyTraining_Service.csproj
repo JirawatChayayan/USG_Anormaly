@@ -45,10 +45,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
-    <Reference Include="USG_Anormaly_DL_lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_DL_lib.dll</HintPath>
-    </Reference>
     <Reference Include="USG_Anormaly_lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\USG_Anormaly_lib\bin\Debug\USG_Anormaly_lib.dll</HintPath>
@@ -67,6 +63,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\USG_Anormaly_DL_lib\USG_Anormaly_DL_lib.csproj">
+      <Project>{652063B7-85E7-4261-9C88-EDB694BA69AE}</Project>
+      <Name>USG_Anormaly_DL_lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

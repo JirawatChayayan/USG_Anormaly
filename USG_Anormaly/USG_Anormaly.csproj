@@ -230,6 +230,12 @@
     <Compile Include="UI_result.Designer.cs">
       <DependentUpon>UI_result.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_TestingError.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_TestingError.Designer.cs">
+      <DependentUpon>UI_TestingError.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_testingProgressBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -299,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_result.resx">
       <DependentUpon>UI_result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_TestingError.resx">
+      <DependentUpon>UI_TestingError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_testingProgressBar.resx">
       <DependentUpon>UI_testingProgressBar.cs</DependentUpon>

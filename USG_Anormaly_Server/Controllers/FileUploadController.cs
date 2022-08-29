@@ -73,7 +73,13 @@ namespace USG_Anormaly_Server.Controllers
             //    Directory.CreateDirectory(unzipPath);
 
             ZipProcess zipProcess = new ZipProcess();
-            zipProcess.unZip(path, PathProcess._modelPath);
+
+            var pathExportZip = Path.Combine(PathProcess._modelPath, Path.GetFileNameWithoutExtension(file.FileName));
+            if(!Directory.Exists(pathExportZip))
+            {
+                Directory.CreateDirectory(pathExportZip);
+            }
+            zipProcess.unZip(path, pathExportZip);
             zipProcess.deleteZip(path);
 
 

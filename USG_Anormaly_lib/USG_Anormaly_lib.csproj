@@ -163,6 +163,7 @@
     <Compile Include="BitmapHImageConverter.cs" />
     <Compile Include="CameraConnect.cs" />
     <Compile Include="ImageConvert.cs" />
+    <Compile Include="PathProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerInterface.cs" />
     <Compile Include="ZipProcess.cs" />

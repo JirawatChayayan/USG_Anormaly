@@ -71,7 +71,6 @@
     <Compile Include="dl_anomaly_detection_workflow.cs" />
     <Compile Include="DL_Inference.cs" />
     <Compile Include="DL_Training.cs" />
-    <Compile Include="PathProcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

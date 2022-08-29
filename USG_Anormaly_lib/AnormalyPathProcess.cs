@@ -120,7 +120,6 @@ namespace USG_Anormaly_lib
             }
         }
     }
-
     public static class UploadPath
     {
         public static string frontCacheZipPath
@@ -191,8 +190,6 @@ namespace USG_Anormaly_lib
         }
 
     }
-
-
     public static class ServerConfigPath
     {
         public static string serverConfigPath
@@ -205,4 +202,5 @@ namespace USG_Anormaly_lib
             }
         }
     }
+
 }

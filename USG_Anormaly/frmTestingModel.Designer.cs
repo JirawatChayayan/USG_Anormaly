@@ -47,6 +47,7 @@
             this.bgw_test1 = new System.ComponentModel.BackgroundWorker();
             this.uI_result1 = new USG_Anormaly.UI_result();
             this.uI_testingProgressBar1 = new USG_Anormaly.UI_testingProgressBar();
+            this.uI_TestingError1 = new USG_Anormaly.UI_TestingError();
             this.panel_cameraIdx.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -256,6 +257,13 @@
             this.uI_testingProgressBar1.Size = new System.Drawing.Size(1444, 52);
             this.uI_testingProgressBar1.TabIndex = 13;
             // 
+            // uI_TestingError1
+            // 
+            this.uI_TestingError1.Location = new System.Drawing.Point(262, 734);
+            this.uI_TestingError1.Name = "uI_TestingError1";
+            this.uI_TestingError1.Size = new System.Drawing.Size(1444, 52);
+            this.uI_TestingError1.TabIndex = 15;
+            // 
             // frmTestingModel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,6 +283,7 @@
             this.Controls.Add(this.comboBox_modelList);
             this.Controls.Add(this.pb_imageTest);
             this.Controls.Add(this.pb_imgResult);
+            this.Controls.Add(this.uI_TestingError1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -307,5 +316,6 @@
         private UI_testingProgressBar uI_testingProgressBar1;
         private UI_result uI_result1;
         private System.ComponentModel.BackgroundWorker bgw_test1;
+        private UI_TestingError uI_TestingError1;
     }
 }

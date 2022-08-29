@@ -1,19 +1,11 @@
 {
   "Version": 1,
-  "Hash": "zYzzxikTj4EctTep/u0MoaR+8GD42fnKwiTswBz9gCA=",
+  "Hash": "zl5Z4fRPqjVd7wKv0LoN/XNpF+jwX1V6NsDhwcz+zj8=",
   "Source": "USG_Anormaly_Server",
   "BasePath": "_content/USG_Anormaly_Server",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [
-    {
-      "Name": "USG_Anormaly_Server\\wwwroot",
-      "Source": "USG_Anormaly_Server",
-      "ContentRoot": "D:\\GitHub\\USG_Anormaly\\USG_Anormaly_Server\\wwwroot\\",
-      "BasePath": "_content/USG_Anormaly_Server",
-      "Pattern": "**"
-    }
-  ],
+  "DiscoveryPatterns": [],
   "Assets": []
 }

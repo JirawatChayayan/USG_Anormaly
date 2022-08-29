@@ -31,7 +31,7 @@ namespace USG_Anormaly_Server.Controllers
         //}
 
 
-        [Route("usg_mvi_anormaly/api/list-dataset-file-model")]
+        [Route("usg_mvi_anormaly/list-dataset-file-model")]
         [HttpGet]
         public async Task<ActionResult<List<FileListDownload>>> GetModel()
         {
@@ -69,7 +69,7 @@ namespace USG_Anormaly_Server.Controllers
 
 
 
-        [Route("usg_mvi_anormaly/api/download-dataset-file")]
+        [Route("usg_mvi_anormaly/download-dataset-file")]
         [HttpGet]
         public async Task<ActionResult> DownloadFile(string fileName)
         {

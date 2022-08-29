@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Net;
 using System.Web;
+using USG_Anormaly_DL_lib;
 
 namespace USG_Anormaly_lib
 {
@@ -245,6 +247,15 @@ namespace USG_Anormaly_lib
         {
             clientId = Environment.MachineName;
         }
+    }
+
+
+
+    public class FileListDownload
+    {
+        public string recipe { get; set; }
+        public string status { get; set; }
+        public FileListUpload files { get; set; }
     }
 
     public class ServerInterface
@@ -494,6 +505,25 @@ namespace USG_Anormaly_lib
             return null;
         }
 
+        public UploadFileResultModel uploadModelFile(string FilePath)
+        {
+            if (!File.Exists(FilePath))
+                throw new FileLoadException($"File {FilePath} not found");
+            ServerConfig serverConfig = new ServerConfig();
+            serverConfig.loadConfig();
+            var client = new RestClient($"{serverConfig.serverPath}/UploadTrainedModel");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddFile("file", FilePath);
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<UploadFileResultModel>(response.Content);
+            }
+            return null;
+        }
+
         public void postInferLog(LogInferenceInsertModel insertLog)
         {
             try
@@ -601,5 +631,29 @@ namespace USG_Anormaly_lib
             throw new Exception(response.Content);
         }
 
+        public List<FileListDownload> GetFileListDownloads()
+        {
+            //http://colorcam.nseb.co.th:81/usg_mvi_anormaly/api/list-dataset-file-model
+            ServerConfig serverConfig = new ServerConfig();
+            serverConfig.loadConfig();
+            var client = new RestClient($"{serverConfig.serverPath}/list-dataset-file-model");
+            client.Timeout = 5000;
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<List<FileListDownload>>(response.Content);
+            }
+            return null;
+        }
+
+        public void downloadfileToLocal(string fileNameDownload)
+        {
+            ServerConfig serverConfig = new ServerConfig();
+            serverConfig.loadConfig();
+            string remoteUri = $"{serverConfig.serverPath}/download-dataset-file?fileName={fileNameDownload.Trim()}";
+            WebClient myWebClient = new WebClient();
+            myWebClient.DownloadFile(remoteUri, Path.Combine(PathProcess.uploadPath,fileNameDownload));
+        }
     }
 }

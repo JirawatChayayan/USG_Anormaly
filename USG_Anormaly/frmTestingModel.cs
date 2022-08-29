@@ -216,7 +216,8 @@ namespace USG_Anormaly
             }
             catch (Exception ex)
             {
-
+                uI_TestingError1.BringToFront();
+                uI_TestingError1.message(ex.Message);
             }
             sw.Stop();
         }
