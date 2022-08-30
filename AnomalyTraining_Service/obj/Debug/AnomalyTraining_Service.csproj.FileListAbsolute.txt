@@ -62,3 +62,4 @@ D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTrainin
 D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.csproj.CopyComplete
 D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.exe
 D:\Project\USG MVI\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.pdb
+D:\GitHub\USG_Anormaly\AnomalyTraining_Service\obj\Debug\AnomalyTraining_Service.csproj.SuggestedBindingRedirects.cache

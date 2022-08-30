@@ -42,7 +42,7 @@ namespace AnormalyTraining_Service_Remote
         public void OnDebug()
         {
             //zipFile(@"C:\\AnormalyModelUpload\\DLModel\\TEST2", @"D:\", "TEST2");
-            //this.OnStart(null);
+            this.OnStart(null);
         }
 
         protected override void OnStop()
@@ -212,7 +212,7 @@ namespace AnormalyTraining_Service_Remote
 
                 string modelFolder = PathProcess.modelRecipeFolder(trainingparam.recipeName);
                 string pathModeZip = @"C:\AnormalyModelUpload\ModelUpload";
-                if(!Directory.Exists(modelFolder))
+                if(!Directory.Exists(pathModeZip))
                 {
                     Directory.CreateDirectory(pathModeZip);
                 }
@@ -253,17 +253,19 @@ namespace AnormalyTraining_Service_Remote
                 Directory.CreateDirectory(dirZip);
             }
             string outputPath = Path.Combine(zipPath, zipName + ".zip");
-            if (File.Exists(zipName))
+            if (File.Exists(outputPath))
             {
                 try
                 {
-                    File.Delete(zipName);
+                    File.Delete(outputPath);
                 }
                 catch (Exception ex)
                 {
 
                 }
             }
+
+
             //ZipFile.CreateFromDirectory(dirZip, outputPath);
             DirectoryInfo from = new DirectoryInfo(dirZip);
             using (var zipToOpen = new FileStream(outputPath, FileMode.Create))

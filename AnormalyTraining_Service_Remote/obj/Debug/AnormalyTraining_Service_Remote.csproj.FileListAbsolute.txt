@@ -19,3 +19,24 @@ D:\Project\USG MVI\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\Anorma
 D:\Project\USG MVI\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\AnormalyTraining_Service_Remote.csproj.CopyComplete
 D:\Project\USG MVI\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\AnormalyTraining_Service_Remote.exe
 D:\Project\USG MVI\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\AnormalyTraining_Service_Remote.pdb
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\AnormalyTraining_Service_Remote.exe.config
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\AnormalyTraining_Service_Remote.exe
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\AnormalyTraining_Service_Remote.pdb
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\Newtonsoft.Json.dll
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\USG_Anormaly_DL_lib.dll
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\USG_Anormaly_lib.dll
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\halcondotnet.dll
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\RestSharp.dll
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\USG_Anormaly_lib.pdb
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\USG_Anormaly_lib.dll.config
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\Newtonsoft.Json.xml
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\USG_Anormaly_DL_lib.pdb
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\USG_Anormaly_DL_lib.dll.config
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\halcondotnet.xml
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\bin\Debug\RestSharp.xml
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\AnormalyTraining_Service_Remote.csproj.AssemblyReference.cache
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\AnormalyTraining_Service_Remote.csproj.CoreCompileInputs.cache
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\AnormalyTraining_Service_Remote.csproj.CopyComplete
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\AnormalyTraining_Service_Remote.exe
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\AnormalyTraining_Service_Remote.pdb
+D:\GitHub\USG_Anormaly\AnormalyTraining_Service_Remote\obj\Debug\AnormalyTraining_Service_Remote.csproj.SuggestedBindingRedirects.cache

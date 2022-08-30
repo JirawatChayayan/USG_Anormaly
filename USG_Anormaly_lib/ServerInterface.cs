@@ -511,7 +511,7 @@ namespace USG_Anormaly_lib
                 throw new FileLoadException($"File {FilePath} not found");
             ServerConfig serverConfig = new ServerConfig();
             serverConfig.loadConfig();
-            var client = new RestClient($"{serverConfig.serverPath}/UploadTrainedModel");
+            var client = new RestClient($"{serverConfig.serverPath}/FileUpload/UploadTrainedModel");
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
             request.AddFile("file", FilePath);

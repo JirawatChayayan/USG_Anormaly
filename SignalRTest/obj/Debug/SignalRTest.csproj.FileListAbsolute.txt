@@ -366,3 +366,4 @@ D:\Project\USG MVI\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.csproj.CoreCom
 D:\Project\USG MVI\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.csproj.CopyComplete
 D:\Project\USG MVI\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.exe
 D:\Project\USG MVI\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.pdb
+D:\GitHub\USG_Anormaly\SignalRTest\obj\Debug\SignalRTest.csproj.SuggestedBindingRedirects.cache

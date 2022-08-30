@@ -12,6 +12,13 @@ namespace USG_Anormaly_Server.Controllers
     [ApiController]
     public class FileUploadController : ControllerBase
     {
+
+        private readonly usg_anormaly_mvi_systemContext _dbcontext;
+        public FileUploadController(usg_anormaly_mvi_systemContext context)
+        {
+            _dbcontext = context;
+        }
+
         [Route("usg_mvi_anormaly/FileUpload")]
         [HttpPost]
         [RequestFormLimits(MultipartBodyLengthLimit = 2097152000)]
@@ -81,7 +88,22 @@ namespace USG_Anormaly_Server.Controllers
             }
             zipProcess.unZip(path, pathExportZip);
             zipProcess.deleteZip(path);
+            try
+            {
+                var dataTrain = await (new AIDatabaseProcess(_dbcontext)).getTrainingData(Path.GetFileNameWithoutExtension(file.FileName));
+                if (dataTrain != null)
+                {
+                    var filesupload = dataTrain.fileUpload;
+                    (new ZipProcess()).deleteZip(Path.Combine(PathProcess._uploadPath, filesupload.zipNameFront));
+                    (new ZipProcess()).deleteZip(Path.Combine(PathProcess._uploadPath, filesupload.zipNameSide1));
+                    (new ZipProcess()).deleteZip(Path.Combine(PathProcess._uploadPath, filesupload.zipNameSide2));
 
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
 
 
             return Ok(new UploadFileResultModel
