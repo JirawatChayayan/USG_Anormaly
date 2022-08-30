@@ -221,6 +221,8 @@ namespace AnormalyTraining_Service_Remote
                                           trainingparam.recipeName);
 
                 var result = (new ServerInterface()).uploadModelFile(modelZip);
+                if (result == null)
+                    throw new Exception("Can not upload file model !!!");
 
                 (new ZipProcess()).deleteZip(modelZip);
 
