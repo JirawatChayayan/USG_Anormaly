@@ -137,25 +137,6 @@ namespace USG_Anormaly
             }
             
         }
-
-
-
-
-
-
-        public void initialLoad()
-        {
-            enableCamera();
-            uI_Training1.initial();
-            uI_Training1.OnSelectedImageTraining += UI_Training1_OnSelectedImageTraining;
-
-            Task.Run(() =>
-            {
-                uI_HomePage1.initial();
-            });
-
-
-        }
         private void enableCamera()
         {
             cameraParam.loadConfig();
@@ -181,6 +162,24 @@ namespace USG_Anormaly
             T1.Wait();
             uI_CameraSetting1.cameraConnected(CameraIdx.Front, ueyeCameraFront.camera_IsOpen);
             uI_CameraSetting1.cameraConnected(CameraIdx.Side, ueyeCameraSide.camera_IsOpen);
+        }
+
+
+
+
+
+        public void initialLoad()
+        {
+            enableCamera();
+            uI_Training1.initial();
+            uI_Training1.OnSelectedImageTraining += UI_Training1_OnSelectedImageTraining;
+
+            Task.Run(() =>
+            {
+                uI_HomePage1.initial();
+            });
+
+
         }
         public void disableCamera()
         {
