@@ -22,7 +22,6 @@ namespace USG_Anormaly
             uI_CameraSetting1.OnSettingValueChanged += UI_CameraSetting1_OnSettingValueChanged;
             uI_Training1.OnRequireCaptureImage += UI_Training1_OnRequireCaptureImage;
         }
-
         private HObject UI_Training1_OnRequireCaptureImage(CameraIdx idx)
         {
             try
@@ -42,7 +41,6 @@ namespace USG_Anormaly
             }
            
         }
-
         public struct ImageFrontSide
         {
             public HObject ImageFront;
@@ -57,27 +55,12 @@ namespace USG_Anormaly
         }
         Color higlightColor = SystemColors.Highlight;
         Color lowLightColor = Color.Transparent;
-
         CameraParamAll cameraParam = new CameraParamAll();
         ueyeCameraConnect ueyeCameraFront = new ueyeCameraConnect();
         ueyeCameraConnect ueyeCameraSide = new ueyeCameraConnect();
         Mutex camera1Lock = new Mutex();
         Mutex camera2Lock = new Mutex();
         public event SelectedImageTraining OnSelectedImageTraining;
-
-        public void initialLoad()
-        {
-            uI_Training1.initial();
-            uI_Training1.OnSelectedImageTraining += UI_Training1_OnSelectedImageTraining;
-
-            Task.Run(() =>
-            {
-                uI_HomePage1.initial();
-            });
-
-
-        }
-
         private void UI_Training1_OnSelectedImageTraining(CameraIdx idx, HObject imgSelect)
         {
             if(OnSelectedImageTraining != null)
@@ -89,91 +72,6 @@ namespace USG_Anormaly
                 imgSelect.Dispose();
             }
         }
-
-        public void enableCamera()
-        {
-            initialLoad();
-
-
-            cameraParam.loadConfig();
-            uI_CameraSetting1.CameraParamAll = cameraParam;
-            Task T1 = Task.Run(() =>
-            {
-                if (!ueyeCameraFront.camera_IsOpen)
-                {
-                    ueyeCameraFront.OpenFrameGraber(CameraIdx.Front);
-                }
-                uI_HomePage1.cameraConnection(CameraIdx.Front, ueyeCameraFront.camera_IsOpen);
-               
-            });
-            Task T2 = Task.Run(() =>
-            {
-                if (!ueyeCameraSide.camera_IsOpen)
-                {
-                    ueyeCameraSide.OpenFrameGraber(CameraIdx.Side);
-                }
-                uI_HomePage1.cameraConnection(CameraIdx.Side, ueyeCameraSide.camera_IsOpen);
-            });
-            T2.Wait();
-            T1.Wait();
-            uI_CameraSetting1.cameraConnected(CameraIdx.Front, ueyeCameraFront.camera_IsOpen);
-            uI_CameraSetting1.cameraConnected(CameraIdx.Side,ueyeCameraSide.camera_IsOpen);
-        }
-        public void disableCamera()
-        {
-            ueyeCameraFront.closeCamera();
-            ueyeCameraSide.closeCamera();
-        }
-
-        public HObject grabImageFront()
-        {
-            if (!ueyeCameraFront.camera_IsOpen)
-                throw new Exception("Camera is not open !!!");
-            camera1Lock.WaitOne();
-            HObject img = ueyeCameraFront.grabImg();
-            camera1Lock.ReleaseMutex();
-            return img;
-        }
-        public HObject grabImageSide()
-        {
-            if (!ueyeCameraSide.camera_IsOpen)
-                throw new Exception("Camera is not open !!!");
-            camera2Lock.WaitOne();
-            HObject img = ueyeCameraSide.grabImg();
-            camera2Lock.ReleaseMutex();
-            return img;
-        }
-        public ImageFrontSide grab2Image()
-        {
-            if (!ueyeCameraSide.camera_IsOpen)
-                throw new Exception("Camera side is not open !!!");
-            if (!ueyeCameraFront.camera_IsOpen)
-                throw new Exception("Camera front is not open !!!");
-
-            HObject imgFront = new HObject();imgFront.GenEmptyObj();
-            HObject imgSide = new HObject();imgSide.GenEmptyObj();
-            Task T1 = Task.Run(() =>
-            {
-                imgFront = grabImageFront();
-            });
-            Task T2 = Task.Run(() =>
-            {
-                imgSide = grabImageSide();
-            });
-            while (!(T1.IsCompleted && T2.IsCompleted))
-            {
-                Thread.Sleep(1);
-            }
-
-            return new ImageFrontSide
-            {
-                ImageFront = imgFront,
-                ImageSide = imgSide,
-            };
-        }
-
-
-
         //pass parameter from sub UI in camerasetting
         private void UI_CameraSetting1_OnSettingValueChanged(CameraIdx idx, CameraParam param)
         {
@@ -188,7 +86,6 @@ namespace USG_Anormaly
                 ueyeCameraSide.updateSetting(param);
             }
         }
-        
         private void changeColor(Button bt)
         {
             Button[] btAll = bt_controlMain;
@@ -240,5 +137,127 @@ namespace USG_Anormaly
             }
             
         }
+
+
+
+
+
+
+        public void initialLoad()
+        {
+            enableCamera();
+            uI_Training1.initial();
+            uI_Training1.OnSelectedImageTraining += UI_Training1_OnSelectedImageTraining;
+
+            Task.Run(() =>
+            {
+                uI_HomePage1.initial();
+            });
+
+
+        }
+        private void enableCamera()
+        {
+            cameraParam.loadConfig();
+            uI_CameraSetting1.CameraParamAll = cameraParam;
+            Task T1 = Task.Run(() =>
+            {
+                if (!ueyeCameraFront.camera_IsOpen)
+                {
+                    ueyeCameraFront.OpenFrameGraber(CameraIdx.Front);
+                }
+                uI_HomePage1.cameraConnection(CameraIdx.Front, ueyeCameraFront.camera_IsOpen);
+
+            });
+            Task T2 = Task.Run(() =>
+            {
+                if (!ueyeCameraSide.camera_IsOpen)
+                {
+                    ueyeCameraSide.OpenFrameGraber(CameraIdx.Side);
+                }
+                uI_HomePage1.cameraConnection(CameraIdx.Side, ueyeCameraSide.camera_IsOpen);
+            });
+            T2.Wait();
+            T1.Wait();
+            uI_CameraSetting1.cameraConnected(CameraIdx.Front, ueyeCameraFront.camera_IsOpen);
+            uI_CameraSetting1.cameraConnected(CameraIdx.Side, ueyeCameraSide.camera_IsOpen);
+        }
+        public void disableCamera()
+        {
+            ueyeCameraFront.closeCamera();
+            ueyeCameraSide.closeCamera();
+        }
+        public HObject grabImageFront()
+        {
+            if (!ueyeCameraFront.camera_IsOpen)
+                throw new Exception("Camera is not open !!!");
+            camera1Lock.WaitOne();
+            HObject img = ueyeCameraFront.grabImg();
+            camera1Lock.ReleaseMutex();
+            return img;
+        }
+        public HObject grabImageSide()
+        {
+            if (!ueyeCameraSide.camera_IsOpen)
+                throw new Exception("Camera is not open !!!");
+            camera2Lock.WaitOne();
+            HObject img = ueyeCameraSide.grabImg();
+            camera2Lock.ReleaseMutex();
+            return img;
+        }
+        public ImageFrontSide grab2Image()
+        {
+            if (!ueyeCameraSide.camera_IsOpen)
+                throw new Exception("Camera side is not open !!!");
+            if (!ueyeCameraFront.camera_IsOpen)
+                throw new Exception("Camera front is not open !!!");
+
+            HObject imgFront = new HObject(); imgFront.GenEmptyObj();
+            HObject imgSide = new HObject(); imgSide.GenEmptyObj();
+            Task T1 = Task.Run(() =>
+            {
+                imgFront = grabImageFront();
+            });
+            Task T2 = Task.Run(() =>
+            {
+                imgSide = grabImageSide();
+            });
+            while (!(T1.IsCompleted && T2.IsCompleted))
+            {
+                Thread.Sleep(1);
+            }
+
+            return new ImageFrontSide
+            {
+                ImageFront = imgFront,
+                ImageSide = imgSide,
+            };
+        }
+        public List<string> getRecipeModelList()
+        {
+            List<string> models = new List<string>();
+            List<ModelStatus> model = (new ServerInterface()).getModelFinished();
+            if (model == null)
+                return null;
+            foreach (ModelStatus modelStatus in model)
+            {
+                if (modelStatus != null)
+                {
+                    models.Add(modelStatus.recipeName);
+                }
+            }
+            return models;
+        }
+        public DL_InferenceResult inference(string recipeModel,CameraIdx idx,HObject img)
+        {
+            AIInferenceModel model = new AIInferenceModel();
+            model.recipe = recipeModel;
+            model.CameraIdx = idx;
+            model.reqImgDisplay = false;
+            model.b64Img = (new ImageConvert()).halconImageTobase64(img, ImgFormat.jpg);
+            return (new ServerInterface()).inference(model);
+
+        }
+
     }
 }

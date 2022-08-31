@@ -24,13 +24,11 @@ namespace USG_Anormaly_lib
             string dataImage = format == ImgFormat.jpg ? "data:image/jpeg;base64," : "data:image/png;base64,"; //data: image /{ }; base64,{ }
             return image2Base64str(Image.FromFile(path), format);
         }
-
         public string image2Base64str(Image img, ImgFormat format = ImgFormat.jpg)
         {
             string dataImage = format == ImgFormat.jpg ? "data:image/jpeg;base64," : "data:image/png;base64,"; //data: image /{ }; base64,{ }
             return dataImage + Convert.ToBase64String(imgToByteArray(img, format));
         }
-
         public byte[] imgToByteArray(Image img, ImgFormat format = ImgFormat.jpg)
         {
             using (MemoryStream mStream = new MemoryStream())
@@ -51,7 +49,6 @@ namespace USG_Anormaly_lib
                 return dataImage + base64str;
             }
         }
-
         public HObject strbase64toHalconImage(string b64Imgstr)
         {
             var splitImg = b64Imgstr.Split(',');
@@ -94,6 +91,24 @@ namespace USG_Anormaly_lib
                 img = Image.FromStream(ms);
             }
             return img;
+        }
+
+        public string halconImageTobase64(HObject img, ImgFormat format)
+        {
+            HImage himg =  new HImage(img);
+            Image imgBmp = (new BitmapHImageConverter()).HImage2Bitmap(himg);
+            string imgStr = image2Base64str(imgBmp, format);
+            try
+            {
+                imgBmp.Dispose();
+                himg.Dispose();
+            }
+            catch
+            {
+
+            }
+
+            return imgStr;
         }
 
 
