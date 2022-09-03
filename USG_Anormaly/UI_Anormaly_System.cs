@@ -150,7 +150,7 @@ namespace USG_Anormaly
 
         private void Camera_captureTimeUpdated(CameraIdx idx, double time)
         {
-            uI_CameraSetting1.setCaptureTime(idx, time);
+            uI_CameraSetting1.setCaptureTime(idx, (int)time);
         }
 
         private void enableCamera()
