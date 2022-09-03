@@ -98,5 +98,12 @@ namespace USG_Anormaly
                 uI_CameraControl_side.Enabled = connected;
             }
         }
+        public void setCaptureTime(CameraIdx idx,double time)
+        {
+            if (idx == CameraIdx.Front)
+                uI_CameraControl_front.captureTime = time;
+            else
+                uI_CameraControl_side.captureTime = time;
+        }
     }
 }

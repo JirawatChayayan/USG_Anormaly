@@ -111,13 +111,22 @@ namespace USG_Anormaly
             changeColor(bt);
             uI_Training1.stopStartFetchdata(false);
             uI_CurrentServerState1.stopFetch();
+            if(bt.Name != bt_camera_setting.Name)
+            {
+                cameraFront.OnCaptureTimeUpdate -= Camera_captureTimeUpdated;
+                cameraSide.OnCaptureTimeUpdate -= Camera_captureTimeUpdated;
+            }
+
             if (bt.Name == bt_home.Name)
             {
-                uI_HomePage1.BringToFront();
+                
             }
             else if(bt.Name==bt_camera_setting.Name)
             {
+                cameraFront.OnCaptureTimeUpdate += Camera_captureTimeUpdated;
+                cameraSide.OnCaptureTimeUpdate += Camera_captureTimeUpdated;
                 uI_CameraSetting1.BringToFront();
+                
             }
             else if(bt.Name==bt_anormaly_training.Name)
             {
@@ -132,11 +141,18 @@ namespace USG_Anormaly
             }
             else if(bt.Name == bt_anormaly_testing.Name)
             {
+                uI_HomePage1.BringToFront();
                 frmTestingModel frm = new frmTestingModel();
                 frm.ShowDialog();
             }
             
         }
+
+        private void Camera_captureTimeUpdated(CameraIdx idx, double time)
+        {
+            uI_CameraSetting1.setCaptureTime(idx, time);
+        }
+
         private void enableCamera()
         {
             cameraParam.loadConfig();
@@ -163,7 +179,6 @@ namespace USG_Anormaly
             uI_CameraSetting1.cameraConnected(CameraIdx.Front, cameraFront.camera_IsOpen);
             uI_CameraSetting1.cameraConnected(CameraIdx.Side, cameraSide.camera_IsOpen);
         }
-
 
 
 

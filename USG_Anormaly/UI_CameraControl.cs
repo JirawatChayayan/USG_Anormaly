@@ -43,6 +43,13 @@ namespace USG_Anormaly
                 btStatusChange();
             }
         }
+        public double captureTime
+        {
+            set
+            {
+                lb_captureTime.Text = $"CaptureTime {value} ms.";
+            }
+        }
         public CameraParam cameraParam  = null;
         private void btStatusName()
         {

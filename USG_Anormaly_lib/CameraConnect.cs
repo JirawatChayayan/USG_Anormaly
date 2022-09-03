@@ -6,10 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using HalconDotNet;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 
 namespace USG_Anormaly_lib
 {
+    public delegate void captureTime(CameraIdx idx, double time);
     public enum CameraIdx
     {
         Front = 1,
@@ -21,12 +23,12 @@ namespace USG_Anormaly_lib
         public int ExposureTime { get; set; } = 5000;
         public int CameraID { get; set; }
         public bool FlipVertical { get; set; } = false;
-        public bool FlipHorizontal { get; set;} = false;
+        public bool FlipHorizontal { get; set; } = false;
     }
     public class CameraParamAll
     {
-        public Dictionary<CameraIdx,CameraParam> param { get; set; }
-        
+        public Dictionary<CameraIdx, CameraParam> param { get; set; }
+
         public CameraParamAll()
         {
             param = new Dictionary<CameraIdx, CameraParam>();
@@ -40,17 +42,17 @@ namespace USG_Anormaly_lib
         }
         public void loadConfig()
         {
-            if(!File.Exists(CameraConfigPath.cameraParam))
+            if (!File.Exists(CameraConfigPath.cameraParam))
             {
                 saveConfig();
             }
             string data = File.ReadAllText(CameraConfigPath.cameraParam);
-            param = JsonConvert.DeserializeObject<Dictionary<CameraIdx,CameraParam>>(data);
+            param = JsonConvert.DeserializeObject<Dictionary<CameraIdx, CameraParam>>(data);
         }
         public void saveConfig()
         {
-            string serialize = JsonConvert.SerializeObject(param,Formatting.Indented);
-            File.WriteAllText(CameraConfigPath.cameraParam,serialize);
+            string serialize = JsonConvert.SerializeObject(param, Formatting.Indented);
+            File.WriteAllText(CameraConfigPath.cameraParam, serialize);
         }
     }
     public class CamCalibration
@@ -66,7 +68,7 @@ namespace USG_Anormaly_lib
         {
             HTuple _calParam = new HTuple();
             HTuple _camPose = new HTuple();
-            if(!File.Exists(CameraConfigPath.cameraCalibrate[0]) && !File.Exists(CameraConfigPath.cameraCalibrate[1]))
+            if (!File.Exists(CameraConfigPath.cameraCalibrate[0]) && !File.Exists(CameraConfigPath.cameraCalibrate[1]))
             {
                 return;
             }
@@ -80,7 +82,7 @@ namespace USG_Anormaly_lib
             catch (Exception ex)
             {
                 camPose = null;
-                calParam  = null;
+                calParam = null;
             }
         }
         public void uploadCalParam(string path)
@@ -122,6 +124,10 @@ namespace USG_Anormaly_lib
         bool _camera_IsOpen = false;
         bool _flipHor = false;
         bool _flipVer = false;
+        public event captureTime OnCaptureTimeUpdate;
+        Stopwatch _sw = new Stopwatch();
+        double last_stopwatch = 0;
+        CameraIdx _cameraIdx;
         public HTuple AcqHandle
         {
             get
@@ -159,8 +165,8 @@ namespace USG_Anormaly_lib
                 //HOperatorSet.SetFramegrabberParam(_acqHandle, "white_balance", "disable");
                 //HOperatorSet.GrabImageStart(_acqHandle, -1);
                 #endregion
-                HOperatorSet.OpenFramegrabber("GenICamTL", 0, 0, 0, 0, 0, 0, 
-                                              "progressive", -1,"gray", -1, 
+                HOperatorSet.OpenFramegrabber("GenICamTL", 0, 0, 0, 0, 0, 0,
+                                              "progressive", -1, "gray", -1,
                                               "false", "default", "Hikrobot MV-CE200-10UM (02G05791359)",
                                               0, -1, out _acqHandle);
                 HOperatorSet.SetFramegrabberParam(_acqHandle, "Width", 5472);
@@ -169,7 +175,7 @@ namespace USG_Anormaly_lib
                 HOperatorSet.GrabImageStart(_acqHandle, -1);
                 _flipVer = camParam.FlipVertical;
                 _flipHor = camParam.FlipHorizontal;
-
+                _cameraIdx = idx;
                 _camera_IsOpen = true;
             }
             catch (Exception e)
@@ -188,7 +194,7 @@ namespace USG_Anormaly_lib
 
                 }
                 _acqHandle = null;
-                _camera_IsOpen =false;
+                _camera_IsOpen = false;
             }
             return camera_IsOpen;
         }
@@ -196,7 +202,7 @@ namespace USG_Anormaly_lib
         {
             if (_camera_IsOpen)
             {
-                if(_acqHandle != null)
+                if (_acqHandle != null)
                 {
                     HOperatorSet.CloseFramegrabber(_acqHandle);
                     _acqHandle.Dispose();
@@ -204,11 +210,30 @@ namespace USG_Anormaly_lib
                 }
             }
         }
+        private void timerSW(bool start)
+        {
+            if (OnCaptureTimeUpdate == null)
+                return;
+            if (start)
+            {
+                _sw.Stop();
+                _sw.Reset();
+                _sw.Start();
+            }
+            else
+            {
+                _sw.Stop();
+                last_stopwatch = _sw.Elapsed.TotalMilliseconds;
+                _sw.Reset();
+                OnCaptureTimeUpdate(_cameraIdx, last_stopwatch);
+            }
+        }
         public HObject grabImg()
         {
+            timerSW(true);
             HObject img = new HObject(); img.GenEmptyObj();
             HOperatorSet.GrabImageAsync(out img, _acqHandle, -1);
-            if(_flipHor)
+            if (_flipHor)
             {
                 HObject imgFlipH = new HObject(); imgFlipH.GenEmptyObj();
                 HOperatorSet.MirrorImage(img, out imgFlipH, "column");
@@ -223,7 +248,7 @@ namespace USG_Anormaly_lib
                 img.Dispose();
                 img = imgFlipV;
             }
-
+            timerSW(false);
             return img;
         }
 
@@ -234,6 +259,9 @@ namespace USG_Anormaly_lib
                 return;
             }
 
+            camParam.FlipHorizontal = param.FlipHorizontal;
+            camParam.FlipVertical = param.FlipVertical;
+
             _flipVer = camParam.FlipVertical;
             _flipHor = camParam.FlipHorizontal;
             if (camParam.ExposureTime != param.ExposureTime)
@@ -241,7 +269,7 @@ namespace USG_Anormaly_lib
                 camParam.ExposureTime = param.ExposureTime;
                 HOperatorSet.SetFramegrabberParam(_acqHandle, "ExposureTime", (double)camParam.ExposureTime);
             }
-           
+
         }
     }
 
