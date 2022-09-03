@@ -20,7 +20,7 @@ namespace USG_Anormaly
         {
             InitializeComponent();
             resetCalParam();
-            tb_focus.MouseWheel += Control_MouseWheel;
+            tb_exposureTime.MouseWheel += Control_MouseWheel;
 
         }
         public event settingValueChanged OnSettingValueChanged;
@@ -72,7 +72,7 @@ namespace USG_Anormaly
         }
         private void tb_focus_ValueChanged(object sender, EventArgs e)
         {
-            txt_focusVal.Text = tb_focus.Value.ToString();
+            txt_expouserTime.Text = tb_exposureTime.Value.ToString();
             //if (OnSettingValueChanged != null)
             //    OnSettingValueChanged(_idx, cameraParam);
         }
@@ -92,7 +92,7 @@ namespace USG_Anormaly
         public void loadConfig(CameraParam param)
         {
             cameraParam = param;
-            tb_focus.Value = cameraParam.FocusLevel;
+            tb_exposureTime.Value = cameraParam.ExposureTime;
             cb_flip_ver.Checked = cameraParam.FlipVertical;
             cb_flip_hor.Checked = cameraParam.FlipHorizontal;
             //if (OnSettingValueChanged != null)
@@ -102,7 +102,7 @@ namespace USG_Anormaly
         {
             if (cameraParam == null)
                 return;
-            cameraParam.FocusLevel = tb_focus.Value;
+            cameraParam.ExposureTime = tb_exposureTime.Value;
             cameraParam.FlipVertical = cb_flip_ver.Checked;
             cameraParam.FlipHorizontal = cb_flip_hor.Checked;
         }
@@ -167,6 +167,11 @@ namespace USG_Anormaly
             lb_camParam_Sx.Text = $"Cell Width (Sx) : 0 um";
             lb_camParam_Sy.Text = $"Cell Height (Sy) : 0 um";
             lb_camParam_FocalLength.Text = $"Focal Length : 0 mm";
+        }
+
+        private void tb_exposureTime_Scroll(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -18,7 +18,7 @@ namespace USG_Anormaly_lib
     }
     public class CameraParam
     {
-        public int FocusLevel { get; set; } = 190;
+        public int ExposureTime { get; set; } = 5000;
         public int CameraID { get; set; }
         public bool FlipVertical { get; set; } = false;
         public bool FlipHorizontal { get; set;} = false;
@@ -116,10 +116,12 @@ namespace USG_Anormaly_lib
             }
         }
     }
-    public class ueyeCameraConnect
+    public class CameraConnect
     {
         HTuple _acqHandle;
         bool _camera_IsOpen = false;
+        bool _flipHor = false;
+        bool _flipVer = false;
         public HTuple AcqHandle
         {
             get
@@ -143,18 +145,31 @@ namespace USG_Anormaly_lib
             try
             {
                 _acqHandle = new HTuple();
-                HOperatorSet.OpenFramegrabber("uEye", 1, 1, 0, 0, 0, 0,
-                                              "default", 8, "default", -1,
-                                              "false", "default", camParam.CameraID.ToString(), 0, -1, out _acqHandle);
+                #region ueye
+                //HOperatorSet.OpenFramegrabber("uEye", 1, 1, 0, 0, 0, 0,
+                //                              "default", 8, "default", -1,
+                //                              "false", "default", camParam.CameraID.ToString(), 0, -1, out _acqHandle);
 
 
-                HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_horizontal", camParam.FlipHorizontal? "true" : "false");
-                HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_vertical", camParam.FlipVertical ? "true" : "false");
-                HOperatorSet.SetFramegrabberParam(_acqHandle, "focus", camParam.FocusLevel);
-                HOperatorSet.SetFramegrabberParam(_acqHandle, "grab_timeout", 10000);
-                HOperatorSet.SetFramegrabberParam(_acqHandle, "image_format", "2592 x 1944  (5M)");
-                HOperatorSet.SetFramegrabberParam(_acqHandle, "white_balance", "disable");
+                //HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_horizontal", camParam.FlipHorizontal? "true" : "false");
+                //HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_vertical", camParam.FlipVertical ? "true" : "false");
+                //HOperatorSet.SetFramegrabberParam(_acqHandle, "focus", camParam.ExposureTime);
+                //HOperatorSet.SetFramegrabberParam(_acqHandle, "grab_timeout", 10000);
+                //HOperatorSet.SetFramegrabberParam(_acqHandle, "image_format", "2592 x 1944  (5M)");
+                //HOperatorSet.SetFramegrabberParam(_acqHandle, "white_balance", "disable");
+                //HOperatorSet.GrabImageStart(_acqHandle, -1);
+                #endregion
+                HOperatorSet.OpenFramegrabber("GenICamTL", 0, 0, 0, 0, 0, 0, 
+                                              "progressive", -1,"gray", -1, 
+                                              "false", "default", "Hikrobot MV-CE200-10UM (02G05791359)",
+                                              0, -1, out _acqHandle);
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "Width", 5472);
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "Height", 3648);
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "ExposureTime", (double)camParam.ExposureTime);
                 HOperatorSet.GrabImageStart(_acqHandle, -1);
+                _flipVer = camParam.FlipVertical;
+                _flipHor = camParam.FlipHorizontal;
+
                 _camera_IsOpen = true;
             }
             catch (Exception e)
@@ -191,8 +206,24 @@ namespace USG_Anormaly_lib
         }
         public HObject grabImg()
         {
-            HObject img = new HObject();
+            HObject img = new HObject(); img.GenEmptyObj();
             HOperatorSet.GrabImageAsync(out img, _acqHandle, -1);
+            if(_flipHor)
+            {
+                HObject imgFlipH = new HObject(); imgFlipH.GenEmptyObj();
+                HOperatorSet.MirrorImage(img, out imgFlipH, "column");
+                img.Dispose();
+                img = imgFlipH;
+            }
+
+            if (_flipVer)
+            {
+                HObject imgFlipV = new HObject(); imgFlipV.GenEmptyObj();
+                HOperatorSet.MirrorImage(img, out imgFlipV, "row");
+                img.Dispose();
+                img = imgFlipV;
+            }
+
             return img;
         }
 
@@ -202,21 +233,13 @@ namespace USG_Anormaly_lib
             {
                 return;
             }
-        
-            if(camParam.FlipHorizontal != param.FlipHorizontal)
+
+            _flipVer = camParam.FlipVertical;
+            _flipHor = camParam.FlipHorizontal;
+            if (camParam.ExposureTime != param.ExposureTime)
             {
-                camParam.FlipHorizontal = param.FlipHorizontal;
-                HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_horizontal", camParam.FlipHorizontal ? "true" : "false");
-            }
-            if(camParam.FlipVertical != param.FlipVertical)
-            {
-                camParam.FlipVertical = param.FlipVertical;
-                HOperatorSet.SetFramegrabberParam(_acqHandle, "flip_vertical", camParam.FlipVertical ? "true" : "false");
-            }
-            if(camParam.FocusLevel != param.FocusLevel)
-            {
-                camParam.FocusLevel = param.FocusLevel;
-                HOperatorSet.SetFramegrabberParam(_acqHandle, "focus", camParam.FocusLevel);
+                camParam.ExposureTime = param.ExposureTime;
+                HOperatorSet.SetFramegrabberParam(_acqHandle, "ExposureTime", (double)camParam.ExposureTime);
             }
            
         }

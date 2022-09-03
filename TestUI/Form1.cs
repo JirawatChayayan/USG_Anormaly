@@ -26,16 +26,13 @@ namespace TestUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            uI_Anormaly_System1.initialLoad();
-            uI_Anormaly_System2.initialLoad();
             uI_Anormaly_System3.initialLoad();
 
-            userControl11.testText(uI_Anormaly_System1.getRecipeModelList()[5]);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            uI_Anormaly_System1.disableCamera();
+            uI_Anormaly_System3.disableCamera();
         }
 
         private void uI_Anormaly_System2_Load(object sender, EventArgs e)

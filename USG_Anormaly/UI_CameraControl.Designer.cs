@@ -31,11 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cb_flip_hor = new System.Windows.Forms.CheckBox();
             this.cb_flip_ver = new System.Windows.Forms.CheckBox();
-            this.txt_focusVal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tb_focus = new System.Windows.Forms.TrackBar();
             this.bt_camera_status = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -52,23 +48,27 @@
             this.lb_camParam_Sx = new System.Windows.Forms.Label();
             this.bt_uploadCamParam = new System.Windows.Forms.Button();
             this.bt_upload_camPos = new System.Windows.Forms.Button();
+            this.tb_exposureTime = new System.Windows.Forms.TrackBar();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_expouserTime = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_focus)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_exposureTime)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cb_flip_hor);
             this.groupBox1.Controls.Add(this.cb_flip_ver);
-            this.groupBox1.Controls.Add(this.txt_focusVal);
+            this.groupBox1.Controls.Add(this.txt_expouserTime);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.tb_focus);
+            this.groupBox1.Controls.Add(this.tb_exposureTime);
             this.groupBox1.Controls.Add(this.bt_camera_status);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Location = new System.Drawing.Point(3, 1);
@@ -102,18 +102,6 @@
             this.cb_flip_ver.UseVisualStyleBackColor = true;
             this.cb_flip_ver.Click += new System.EventHandler(this.cb_flip_Click);
             // 
-            // txt_focusVal
-            // 
-            this.txt_focusVal.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_focusVal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_focusVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_focusVal.Location = new System.Drawing.Point(34, 141);
-            this.txt_focusVal.Name = "txt_focusVal";
-            this.txt_focusVal.Size = new System.Drawing.Size(171, 73);
-            this.txt_focusVal.TabIndex = 13;
-            this.txt_focusVal.Text = "112";
-            this.txt_focusVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -123,37 +111,6 @@
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Flip Image";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Focus Level";
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(27, 81);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(18, 164);
-            this.panel1.TabIndex = 10;
-            // 
-            // tb_focus
-            // 
-            this.tb_focus.LargeChange = 10;
-            this.tb_focus.Location = new System.Drawing.Point(5, 74);
-            this.tb_focus.Maximum = 240;
-            this.tb_focus.Minimum = 112;
-            this.tb_focus.Name = "tb_focus";
-            this.tb_focus.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tb_focus.Size = new System.Drawing.Size(45, 176);
-            this.tb_focus.TabIndex = 9;
-            this.tb_focus.Value = 112;
-            this.tb_focus.ValueChanged += new System.EventHandler(this.tb_focus_ValueChanged);
-            this.tb_focus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tb_focus_MouseUp);
             // 
             // bt_camera_status
             // 
@@ -317,6 +274,50 @@
             this.bt_upload_camPos.UseVisualStyleBackColor = true;
             this.bt_upload_camPos.Click += new System.EventHandler(this.bt_uploadCal_Click);
             // 
+            // tb_exposureTime
+            // 
+            this.tb_exposureTime.LargeChange = 10;
+            this.tb_exposureTime.Location = new System.Drawing.Point(5, 74);
+            this.tb_exposureTime.Maximum = 10000;
+            this.tb_exposureTime.Minimum = 100;
+            this.tb_exposureTime.Name = "tb_exposureTime";
+            this.tb_exposureTime.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tb_exposureTime.Size = new System.Drawing.Size(45, 176);
+            this.tb_exposureTime.TabIndex = 9;
+            this.tb_exposureTime.Value = 5000;
+            this.tb_exposureTime.Scroll += new System.EventHandler(this.tb_exposureTime_Scroll);
+            this.tb_exposureTime.ValueChanged += new System.EventHandler(this.tb_focus_ValueChanged);
+            this.tb_exposureTime.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tb_focus_MouseUp);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(27, 81);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(18, 164);
+            this.panel1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 126);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Exposure Time";
+            // 
+            // txt_expouserTime
+            // 
+            this.txt_expouserTime.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_expouserTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_expouserTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_expouserTime.Location = new System.Drawing.Point(30, 142);
+            this.txt_expouserTime.Name = "txt_expouserTime";
+            this.txt_expouserTime.Size = new System.Drawing.Size(185, 73);
+            this.txt_expouserTime.TabIndex = 13;
+            this.txt_expouserTime.Text = "5000";
+            this.txt_expouserTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // UI_CameraControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,13 +327,13 @@
             this.Size = new System.Drawing.Size(221, 595);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_focus)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_exposureTime)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,11 +343,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cb_flip_hor;
         private System.Windows.Forms.CheckBox cb_flip_ver;
-        private System.Windows.Forms.TextBox txt_focusVal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TrackBar tb_focus;
         private System.Windows.Forms.Button bt_camera_status;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tabControl1;
@@ -363,5 +360,9 @@
         private System.Windows.Forms.Label lb_camParam_Sx;
         private System.Windows.Forms.Button bt_uploadCamParam;
         private System.Windows.Forms.Button bt_upload_camPos;
+        private System.Windows.Forms.TextBox txt_expouserTime;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TrackBar tb_exposureTime;
     }
 }

@@ -56,8 +56,8 @@ namespace USG_Anormaly
         Color higlightColor = SystemColors.Highlight;
         Color lowLightColor = Color.Transparent;
         CameraParamAll cameraParam = new CameraParamAll();
-        ueyeCameraConnect ueyeCameraFront = new ueyeCameraConnect();
-        ueyeCameraConnect ueyeCameraSide = new ueyeCameraConnect();
+        CameraConnect cameraFront = new CameraConnect();
+        CameraConnect cameraSide = new CameraConnect();
         Mutex camera1Lock = new Mutex();
         Mutex camera2Lock = new Mutex();
         public event SelectedImageTraining OnSelectedImageTraining;
@@ -79,11 +79,11 @@ namespace USG_Anormaly
             cameraParam.saveConfig();
             if(idx == CameraIdx.Front)
             {
-                ueyeCameraFront.updateSetting(param);
+                cameraFront.updateSetting(param);
             }
             else
             {
-                ueyeCameraSide.updateSetting(param);
+                cameraSide.updateSetting(param);
             }
         }
         private void changeColor(Button bt)
@@ -143,25 +143,25 @@ namespace USG_Anormaly
             uI_CameraSetting1.CameraParamAll = cameraParam;
             Task T1 = Task.Run(() =>
             {
-                if (!ueyeCameraFront.camera_IsOpen)
+                if (!cameraFront.camera_IsOpen)
                 {
-                    ueyeCameraFront.OpenFrameGraber(CameraIdx.Front);
+                    cameraFront.OpenFrameGraber(CameraIdx.Front);
                 }
-                uI_HomePage1.cameraConnection(CameraIdx.Front, ueyeCameraFront.camera_IsOpen);
+                uI_HomePage1.cameraConnection(CameraIdx.Front, cameraFront.camera_IsOpen);
 
             });
             Task T2 = Task.Run(() =>
             {
-                if (!ueyeCameraSide.camera_IsOpen)
+                if (!cameraSide.camera_IsOpen)
                 {
-                    ueyeCameraSide.OpenFrameGraber(CameraIdx.Side);
+                    cameraSide.OpenFrameGraber(CameraIdx.Side);
                 }
-                uI_HomePage1.cameraConnection(CameraIdx.Side, ueyeCameraSide.camera_IsOpen);
+                uI_HomePage1.cameraConnection(CameraIdx.Side, cameraSide.camera_IsOpen);
             });
             T2.Wait();
             T1.Wait();
-            uI_CameraSetting1.cameraConnected(CameraIdx.Front, ueyeCameraFront.camera_IsOpen);
-            uI_CameraSetting1.cameraConnected(CameraIdx.Side, ueyeCameraSide.camera_IsOpen);
+            uI_CameraSetting1.cameraConnected(CameraIdx.Front, cameraFront.camera_IsOpen);
+            uI_CameraSetting1.cameraConnected(CameraIdx.Side, cameraSide.camera_IsOpen);
         }
 
 
@@ -183,32 +183,32 @@ namespace USG_Anormaly
         }
         public void disableCamera()
         {
-            ueyeCameraFront.closeCamera();
-            ueyeCameraSide.closeCamera();
+            cameraFront.closeCamera();
+            cameraSide.closeCamera();
         }
         public HObject grabImageFront()
         {
-            if (!ueyeCameraFront.camera_IsOpen)
+            if (!cameraFront.camera_IsOpen)
                 throw new Exception("Camera is not open !!!");
             camera1Lock.WaitOne();
-            HObject img = ueyeCameraFront.grabImg();
+            HObject img = cameraFront.grabImg();
             camera1Lock.ReleaseMutex();
             return img;
         }
         public HObject grabImageSide()
         {
-            if (!ueyeCameraSide.camera_IsOpen)
+            if (!cameraSide.camera_IsOpen)
                 throw new Exception("Camera is not open !!!");
             camera2Lock.WaitOne();
-            HObject img = ueyeCameraSide.grabImg();
+            HObject img = cameraSide.grabImg();
             camera2Lock.ReleaseMutex();
             return img;
         }
         public ImageFrontSide grab2Image()
         {
-            if (!ueyeCameraSide.camera_IsOpen)
+            if (!cameraSide.camera_IsOpen)
                 throw new Exception("Camera side is not open !!!");
-            if (!ueyeCameraFront.camera_IsOpen)
+            if (!cameraFront.camera_IsOpen)
                 throw new Exception("Camera front is not open !!!");
 
             HObject imgFront = new HObject(); imgFront.GenEmptyObj();
