@@ -351,8 +351,8 @@ namespace USG_Anormaly
             #region Zip Compression 
             de("Starting file compression.", LogLevel.INFO);
             percent = zipFile(UploadPath.frontForzip, UploadPath.zipSave, "Front", 0);
-            percent = zipFile(UploadPath.side1Forzip, UploadPath.zipSave, "Size_1", percent);
-            percent = zipFile(UploadPath.side2Forzip, UploadPath.zipSave, "Size_2", percent+1);
+            percent = zipFile(UploadPath.side1Forzip, UploadPath.zipSave, "Side_1", percent);
+            percent = zipFile(UploadPath.side2Forzip, UploadPath.zipSave, "Side_2", percent+1);
             de("File compression finished.", LogLevel.INFO);
             #endregion
 
@@ -363,11 +363,11 @@ namespace USG_Anormaly
                 de("Starting uploading File to server.", LogLevel.INFO);
                 Thread.Sleep(10);
                 bgw_Upload_data.ReportProgress((int)(0), "Front.zip Uploading");
-                var retFront = (new ServerInterface()).uploadFile(Path.Combine(UploadPath.zipSave, "Front.zip"));
-                bgw_Upload_data.ReportProgress((int)(33), "Size_1.zip Uploading");
-                var retSize1 = (new ServerInterface()).uploadFile(Path.Combine(UploadPath.zipSave, "Size_1.zip"));
-                bgw_Upload_data.ReportProgress((int)(66), "Size_2.zip Uploading");
-                var retSize2 = (new ServerInterface()).uploadFile(Path.Combine(UploadPath.zipSave, "Size_2.zip"));
+                var retFront = (new ServerInterface()).uploadFilechunk(Path.Combine(UploadPath.zipSave, "Front.zip"));
+                bgw_Upload_data.ReportProgress((int)(33), "Side_1.zip Uploading");
+                var retSize1 = (new ServerInterface()).uploadFilechunk(Path.Combine(UploadPath.zipSave, "Side_1.zip"));
+                bgw_Upload_data.ReportProgress((int)(66), "Side_2.zip Uploading");
+                var retSize2 = (new ServerInterface()).uploadFilechunk(Path.Combine(UploadPath.zipSave, "Side_2.zip"));
                 UploadFileModel modelUploadTrig = new UploadFileModel();
                 modelUploadTrig.recipeName = (string)e.Argument;
                 modelUploadTrig.hyperDLParam = trainingParam.hyperDLParam;

@@ -34,11 +34,39 @@ namespace USG_Anormaly_DL_lib
 
     public static class PathProcess
     {
+
+        static string _path = null;
+        private static void checkDrivesInPC()
+        {
+            string dir = "";
+            DriveInfo[] driveInfo = DriveInfo.GetDrives();
+            foreach (DriveInfo drive in driveInfo)
+            {
+                dir = Path.Combine(drive.Name, "AnormalyModelUpload");
+                if (Directory.Exists(dir))
+                {
+                    _path = dir;
+                    return;
+                }
+            }
+
+            var a = (from b in driveInfo
+                     where b.DriveType == DriveType.Fixed
+                     orderby b.TotalSize descending
+                     select b).Take(1);
+
+            dir = Path.Combine(a.ToArray()[0].Name, "AnormalyModelUpload");
+            _path = dir;
+        }
         public static string mainPath
         {
             get
             {
-                string path = @"C:\AnormalyModelUpload\";
+                if(_path == null)
+                {
+                    checkDrivesInPC();
+                }
+                string path = _path;
                 createFolder(path);
                 return path;
             }

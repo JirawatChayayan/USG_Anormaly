@@ -95,7 +95,6 @@ D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\RestSharp.dll
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\halcondotnet.xml
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\hdevenginedotnet.xml
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\Newtonsoft.Json.xml
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\PixelFormatsConverter.xml
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_lib.pdb
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\USG_Anormaly_lib.dll.config
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_DL_lib\bin\Debug\RestSharp.xml

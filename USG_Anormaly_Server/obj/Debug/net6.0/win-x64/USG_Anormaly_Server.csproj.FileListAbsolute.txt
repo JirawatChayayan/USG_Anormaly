@@ -219,3 +219,4 @@ D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\win-x64\refint\USG_A
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\win-x64\USG_Anormaly_Server.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\win-x64\USG_Anormaly_Server.genruntimeconfig.cache
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\win-x64\ref\USG_Anormaly_Server.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\bin\Debug\net6.0\win-x64\USG_Anormaly_Server.staticwebassets.runtime.json

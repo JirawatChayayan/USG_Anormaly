@@ -100,6 +100,8 @@ D:\GitHub\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_I
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.csproj.CopyComplete
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.dll
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.pdb
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.csproj.AssemblyReference.cache
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.csproj.CoreCompileInputs.cache
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\bin\USG_Anormaly_Server_Infer.dll.config
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\bin\USG_Anormaly_Server_Infer.dll
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\bin\USG_Anormaly_Server_Infer.pdb
@@ -197,8 +199,6 @@ D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\bin\USG_Anormaly_lib.d
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\bin\Antlr3.Runtime.pdb
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\bin\RestSharp.xml
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.csproj.AssemblyReference.cache
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.csproj.CoreCompileInputs.cache
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.csproj.CopyComplete
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.dll
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server_Infer\obj\Debug\USG_Anormaly_Server_Infer.pdb

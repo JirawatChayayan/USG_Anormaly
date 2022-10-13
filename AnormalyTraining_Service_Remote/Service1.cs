@@ -220,7 +220,7 @@ namespace AnormalyTraining_Service_Remote
                                           pathModeZip,
                                           trainingparam.recipeName);
 
-                var result = (new ServerInterface()).uploadModelFile(modelZip);
+                var result = (new ServerInterface()).uploadModelFilechunk(modelZip);
                 if (result == null)
                     throw new Exception("Can not upload file model !!!");
 

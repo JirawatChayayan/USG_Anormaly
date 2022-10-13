@@ -1,4 +1,5 @@
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\USG_Anormaly_Server.exe
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\web.config
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\appsettings.json
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\PubTmp\Out\USG_Anormaly_Server.dll

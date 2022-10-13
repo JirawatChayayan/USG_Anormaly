@@ -205,6 +205,33 @@ D:\GitHub\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.CopyComplete
 D:\GitHub\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.exe
 D:\GitHub\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.AssemblyReference.cache
+D:\GitHub\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_TestingError.resources
+D:\GitHub\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.SuggestedBindingRedirects.cache
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.AssemblyReference.cache
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.SuggestedBindingRedirects.cache
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.exe.config
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.Form1.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.frmModelDetail.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.frmTestingModel.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.Properties.Resources.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_Anormaly_System.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_CameraControl.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_CameraSetting.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_CurrentServerState.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_HomePage.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_ImageDisplay.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_ParameterTrain.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_PretrainImage.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_result.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_TestingError.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_testingProgressBar.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_Training.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_trainingResult.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_WaitTrainingProcess.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.GenerateResource.cache
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.CoreCompileInputs.cache
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\USG_Anormaly.exe.config
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\USG_Anormaly.exe
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\USG_Anormaly.pdb
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\halcondotnet.dll
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\hdevenginedotnet.dll
@@ -264,31 +291,6 @@ D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\System.Web.Http.Cors.xml
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\USG_Anormaly_lib.pdb
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\USG_Anormaly_lib.dll.config
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\RestSharp.xml
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.AssemblyReference.cache
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.Form1.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.frmModelDetail.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.frmTestingModel.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.Properties.Resources.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_Anormaly_System.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_CameraControl.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_CameraSetting.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_CurrentServerState.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_HomePage.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_ImageDisplay.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_ParameterTrain.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_PretrainImage.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_result.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_testingProgressBar.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_Training.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_trainingResult.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_WaitTrainingProcess.resources
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.GenerateResource.cache
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.CoreCompileInputs.cache
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.CopyComplete
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.exe
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.pdb
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_TestingError.resources
-D:\GitHub\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_TestingError.resources
-D:\GitHub\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.SuggestedBindingRedirects.cache
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\USG_Anormaly.dll.config
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\USG_Anormaly.dll
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.dll

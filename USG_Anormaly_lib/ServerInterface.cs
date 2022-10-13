@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
+using Shared;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +8,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Windows.Forms;
 using USG_Anormaly_DL_lib;
 
 namespace USG_Anormaly_lib
@@ -523,6 +525,289 @@ namespace USG_Anormaly_lib
             }
             return null;
         }
+
+        private UploadFileResultModel uploadModelFiletochunkServer(string FilePath)
+        {
+            if (!File.Exists(FilePath))
+                throw new FileLoadException($"File {FilePath} not found");
+            ServerConfig serverConfig = new ServerConfig();
+            serverConfig.loadConfig();
+            var client = new RestClient($"{serverConfig.serverPath}/FileUpload/UploadTrainedModelChunk");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddFile("file", FilePath);
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<UploadFileResultModel>(response.Content);
+            }
+            return null;
+        }
+
+        private UploadFileResultModel uploadFiletochunkServer(string FilePath)
+        {
+            if (!File.Exists(FilePath))
+                throw new FileLoadException($"File {FilePath} not found");
+            ServerConfig serverConfig = new ServerConfig();
+            serverConfig.loadConfig();
+            var client = new RestClient($"{serverConfig.serverPath}/FileUploadChunk");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddFile("file", FilePath);
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                if (response.Content == "")
+                    return null;
+                return JsonConvert.DeserializeObject<UploadFileResultModel>(response.Content);
+            }
+            else
+            {
+                throw new Exception("Error");
+            }
+        }
+
+        public UploadFileResultModel uploadModelFilechunk(string FilePath)
+        {
+            if (!File.Exists(FilePath))
+                throw new FileLoadException($"File {FilePath} not found");
+            Utils ut = new Utils();
+
+            ut.FileName = FilePath;
+            ut.TempFolder = AnormalyPathProcess.chunkPath;
+            if (!Directory.Exists(ut.TempFolder))
+                Directory.CreateDirectory(ut.TempFolder);
+            ut.MaxFileSizeMB = 1;
+            ut.SplitFile();
+            UploadFileResultModel res = null;
+            List<string> files_Error1 = null;
+            List<string> files_Error2 = null;
+            List<string> files_Error3 = null;
+            List<string> files_Error4 = null;
+
+
+            foreach (string file in ut.FileParts)
+            {
+                try
+                {
+                    res = uploadModelFiletochunkServer(file);
+                }
+                catch
+                {
+                    if (files_Error1 == null)
+                        files_Error1 = new List<string>();
+                    files_Error1.Add(file);
+                }
+            }
+
+            //check error 1st time
+            if (files_Error1 != null)
+            {
+                foreach (string file in files_Error1)
+                {
+                    try
+                    {
+                        res = uploadModelFiletochunkServer(file);
+                    }
+                    catch
+                    {
+
+                        if (files_Error2 == null)
+                            files_Error2 = new List<string>();
+                        files_Error2.Add(file);
+                    }
+                }
+            }
+
+            //check error 2nd time
+            if (files_Error2 != null)
+            {
+                foreach (string file in files_Error2)
+                {
+                    try
+                    {
+                        res = uploadModelFiletochunkServer(file);
+                    }
+                    catch
+                    {
+                        if (files_Error3 == null)
+                            files_Error3 = new List<string>();
+                        files_Error3.Add(file);
+                    }
+                }
+            }
+
+            //check error 3rd time
+            if (files_Error3 != null)
+            {
+                foreach (string file in files_Error3)
+                {
+                    try
+                    {
+                        res = uploadModelFiletochunkServer(file);
+                    }
+                    catch
+                    {
+                        if (files_Error4 == null)
+                            files_Error4 = new List<string>();
+                        files_Error4.Add(file);
+                    }
+                }
+            }
+
+            //check error 3th time
+            if (files_Error4 != null)
+            {
+                foreach (string file in files_Error4)
+                {
+                    try
+                    {
+                        res = uploadModelFiletochunkServer(file);
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            }
+
+
+
+            foreach (string file in ut.FileParts)
+            {
+                try
+                {
+                    File.Delete(file);
+                }
+                catch
+                {
+
+                }
+            }
+            return res;
+        }
+
+        public UploadFileResultModel uploadFilechunk(string FilePath)
+        {
+            if (!File.Exists(FilePath))
+                throw new FileLoadException($"File {FilePath} not found");
+            Utils ut = new Utils();
+
+            ut.FileName = FilePath;
+            ut.TempFolder = AnormalyPathProcess.chunkPath;
+            if (!Directory.Exists(ut.TempFolder))
+                Directory.CreateDirectory(ut.TempFolder);
+            ut.MaxFileSizeMB = 1;
+            ut.SplitFile(true);
+            UploadFileResultModel res = null;
+            List<string> files_Error1 = null;
+            List<string> files_Error2 = null;
+            List<string> files_Error3 = null;
+            List<string> files_Error4 = null;
+
+
+            foreach (string file in ut.FileParts)
+            {
+                try
+                {
+                    res = uploadFiletochunkServer(file);
+                }
+                catch
+                {
+                    if (files_Error1 == null)
+                        files_Error1 = new List<string>();
+                    files_Error1.Add(file);
+                }
+            }
+
+            //check error 1st time
+            if (files_Error1 != null)
+            {
+                foreach (string file in files_Error1)
+                {
+                    try
+                    {
+                        res = uploadFiletochunkServer(file);
+                    }
+                    catch
+                    {
+
+                        if (files_Error2 == null)
+                            files_Error2 = new List<string>();
+                        files_Error2.Add(file);
+                    }
+                }
+            }
+
+            //check error 2nd time
+            if(files_Error2 != null)
+            {
+                foreach (string file in files_Error2)
+                {
+                    try
+                    {
+                        res = uploadFiletochunkServer(file);
+                    }
+                    catch
+                    {
+                        if(files_Error3 == null)
+                            files_Error3 = new List<string>();
+                        files_Error3.Add(file);
+                    }
+                }
+            }
+
+            //check error 3rd time
+            if (files_Error3 != null)
+            {
+                foreach (string file in files_Error3)
+                {
+                    try
+                    {
+                        res = uploadFiletochunkServer(file);
+                    }
+                    catch
+                    {
+                        if (files_Error4 == null)
+                            files_Error4 = new List<string>();
+                        files_Error4.Add(file);
+                    }
+                }
+            }
+
+            //check error 3th time
+            if (files_Error4 != null)
+            {
+                foreach (string file in files_Error4)
+                {
+                    try
+                    {
+                        res = uploadFiletochunkServer(file);
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            }
+
+            //delete
+            foreach (string file in ut.FileParts)
+            {
+                try
+                {
+                    File.Delete(file);
+                }
+                catch
+                {
+
+                }
+            }
+            return res;
+        }
+
 
         public void postInferLog(LogInferenceInsertModel insertLog)
         {

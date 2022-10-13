@@ -9,6 +9,29 @@ namespace USG_Anormaly_lib
 {
     public static class AnormalyPathProcess
     {
+        static string _path = null;
+        private static void checkDrivesInPC()
+        {
+            string dir = "";
+            DriveInfo[] driveInfo = DriveInfo.GetDrives();
+            foreach (DriveInfo drive in driveInfo)
+            {
+                dir = Path.Combine(drive.Name, "Anormaly_configuration");
+                if (Directory.Exists(dir))
+                {
+                    _path = dir;
+                    return;
+                }
+            }
+
+            var a = (from b in driveInfo
+                     where b.DriveType == DriveType.Fixed
+                     orderby b.TotalSize descending
+                     select b).Take(1);
+
+            dir = Path.Combine(a.ToArray()[0].Name, "Anormaly_configuration");
+            _path = dir;
+        }
         public static void createPath(string path)
         {
             if(!Directory.Exists(path))
@@ -20,7 +43,11 @@ namespace USG_Anormaly_lib
         {
             get
             {
-                string path = @"D:\Anormaly_configuration";
+                if(_path == null)
+                {
+                    checkDrivesInPC();
+                }
+                string path = _path;
                 createPath(path);
                 return path;
             }
@@ -30,6 +57,16 @@ namespace USG_Anormaly_lib
             get
             {
                 string path = Path.Combine(mainPath, "ZipModel");
+                createPath(path);
+                return path;
+            }
+        }
+
+        public static string chunkPath
+        {
+            get
+            {
+                string path = Path.Combine(mainPath, "chunkData");
                 createPath(path);
                 return path;
             }
@@ -188,7 +225,6 @@ namespace USG_Anormaly_lib
                 return path;
             }
         }
-
     }
     public static class ServerConfigPath
     {

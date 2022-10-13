@@ -1,0 +1,8 @@
+D:\Project\USG MVI\USG_Anormaly\TestFunction\bin\Debug\TestFunction.exe.config
+D:\Project\USG MVI\USG_Anormaly\TestFunction\bin\Debug\TestFunction.exe
+D:\Project\USG MVI\USG_Anormaly\TestFunction\bin\Debug\TestFunction.pdb
+D:\Project\USG MVI\USG_Anormaly\TestFunction\obj\Debug\TestFunction.csproj.AssemblyReference.cache
+D:\Project\USG MVI\USG_Anormaly\TestFunction\obj\Debug\TestFunction.csproj.SuggestedBindingRedirects.cache
+D:\Project\USG MVI\USG_Anormaly\TestFunction\obj\Debug\TestFunction.csproj.CoreCompileInputs.cache
+D:\Project\USG MVI\USG_Anormaly\TestFunction\obj\Debug\TestFunction.exe
+D:\Project\USG MVI\USG_Anormaly\TestFunction\obj\Debug\TestFunction.pdb

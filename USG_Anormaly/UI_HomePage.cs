@@ -46,6 +46,7 @@ namespace USG_Anormaly
 
         public void initial()
         {
+            timer_fetch_api.Enabled = true;
             timer_fetch_api.Stop();
             callAPI();
             if(!serverConnecting)

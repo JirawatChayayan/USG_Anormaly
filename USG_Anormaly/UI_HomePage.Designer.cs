@@ -35,14 +35,14 @@
             this.bt_camera1_status = new System.Windows.Forms.Button();
             this.timer_fetch_api = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bt_MoreInfo = new System.Windows.Forms.Button();
+            this.uI_ImageDisplay1 = new USG_Anormaly.UI_ImageDisplay();
             this.listBox_ModelName = new System.Windows.Forms.ListBox();
             this.lb_Loading = new System.Windows.Forms.Label();
             this.txt_trainingInfo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_modelName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.uI_ImageDisplay1 = new USG_Anormaly.UI_ImageDisplay();
-            this.bt_MoreInfo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +95,6 @@
             // 
             // timer_fetch_api
             // 
-            this.timer_fetch_api.Enabled = true;
             this.timer_fetch_api.Interval = 30000;
             this.timer_fetch_api.Tick += new System.EventHandler(this.timer_fetch_api_Tick);
             // 
@@ -115,6 +114,26 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "AI Model ";
+            // 
+            // bt_MoreInfo
+            // 
+            this.bt_MoreInfo.Location = new System.Drawing.Point(178, 477);
+            this.bt_MoreInfo.Name = "bt_MoreInfo";
+            this.bt_MoreInfo.Size = new System.Drawing.Size(260, 27);
+            this.bt_MoreInfo.TabIndex = 7;
+            this.bt_MoreInfo.Text = "Click me for more detail";
+            this.bt_MoreInfo.UseVisualStyleBackColor = true;
+            this.bt_MoreInfo.Click += new System.EventHandler(this.bt_MoreInfo_Click);
+            // 
+            // uI_ImageDisplay1
+            // 
+            this.uI_ImageDisplay1.frontImg = null;
+            this.uI_ImageDisplay1.Location = new System.Drawing.Point(178, 205);
+            this.uI_ImageDisplay1.Name = "uI_ImageDisplay1";
+            this.uI_ImageDisplay1.side1Img = null;
+            this.uI_ImageDisplay1.side2Img = null;
+            this.uI_ImageDisplay1.Size = new System.Drawing.Size(260, 267);
+            this.uI_ImageDisplay1.TabIndex = 6;
             // 
             // listBox_ModelName
             // 
@@ -175,26 +194,6 @@
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "ModelName";
-            // 
-            // uI_ImageDisplay1
-            // 
-            this.uI_ImageDisplay1.frontImg = null;
-            this.uI_ImageDisplay1.Location = new System.Drawing.Point(178, 205);
-            this.uI_ImageDisplay1.Name = "uI_ImageDisplay1";
-            this.uI_ImageDisplay1.side1Img = null;
-            this.uI_ImageDisplay1.side2Img = null;
-            this.uI_ImageDisplay1.Size = new System.Drawing.Size(260, 267);
-            this.uI_ImageDisplay1.TabIndex = 6;
-            // 
-            // bt_MoreInfo
-            // 
-            this.bt_MoreInfo.Location = new System.Drawing.Point(178, 477);
-            this.bt_MoreInfo.Name = "bt_MoreInfo";
-            this.bt_MoreInfo.Size = new System.Drawing.Size(260, 27);
-            this.bt_MoreInfo.TabIndex = 7;
-            this.bt_MoreInfo.Text = "Click me for more detail";
-            this.bt_MoreInfo.UseVisualStyleBackColor = true;
-            this.bt_MoreInfo.Click += new System.EventHandler(this.bt_MoreInfo_Click);
             // 
             // UI_HomePage
             // 

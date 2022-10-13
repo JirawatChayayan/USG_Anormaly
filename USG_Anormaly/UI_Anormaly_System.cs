@@ -119,7 +119,7 @@ namespace USG_Anormaly
 
             if (bt.Name == bt_home.Name)
             {
-                
+                uI_HomePage1.BringToFront();
             }
             else if(bt.Name==bt_camera_setting.Name)
             {

@@ -204,3 +204,4 @@ D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\refint\US
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\USG_Anormaly_Server.pdb
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\USG_Anormaly_Server.genruntimeconfig.cache
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Release\net6.0\ref\USG_Anormaly_Server.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\bin\Release\net6.0\web.config

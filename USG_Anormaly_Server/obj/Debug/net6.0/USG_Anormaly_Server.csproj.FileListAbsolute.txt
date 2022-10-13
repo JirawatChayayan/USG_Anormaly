@@ -369,6 +369,7 @@ D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\refint\USG_Anormaly_
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\USG_Anormaly_Server.pdb
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\USG_Anormaly_Server.genruntimeconfig.cache
 D:\GitHub\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\ref\USG_Anormaly_Server.dll
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\bin\Debug\net6.0\web.config
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\bin\Debug\net6.0\appsettings.Development.json
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\bin\Debug\net6.0\appsettings.json
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\bin\Debug\net6.0\USG_Anormaly_Server.exe
@@ -438,4 +439,3 @@ D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\refint\USG_
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\USG_Anormaly_Server.pdb
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\USG_Anormaly_Server.genruntimeconfig.cache
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\obj\Debug\net6.0\ref\USG_Anormaly_Server.dll
-D:\Project\USG MVI\USG_Anormaly\USG_Anormaly_Server\bin\Debug\net6.0\USG_Anormaly_Server.staticwebassets.runtime.json
