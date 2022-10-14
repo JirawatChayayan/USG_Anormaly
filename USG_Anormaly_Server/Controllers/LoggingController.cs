@@ -91,5 +91,41 @@ namespace USG_Anormaly_Server.Controllers
                 return NotFound(ex.Message);
             }
         }
+
+        [HttpPost("retrieve-log-training/")]
+        public async Task<ActionResult<List<LogTrainingModel>>> retrieve_logTraining([FromBody] QueryParam queryParam)
+        {
+            if (queryParam == null)
+                return BadRequest();
+            if (queryParam.fromDate == null)
+                return BadRequest();
+            try
+            {
+                var res = await (new Logging(_dbcontext)).getLogTraining(queryParam.fromDate, queryParam.toDate);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [HttpPost("retrieve-log-inference/")]
+        public async Task<ActionResult<List<LogInferenceModel>>> retrieve_logInfer([FromBody] QueryParam queryParam)
+        {
+            if (queryParam == null)
+                return BadRequest();
+            if (queryParam.fromDate == null)
+                return BadRequest();
+            try
+            {
+                var res = await (new Logging(_dbcontext)).GetInferenceLogs(queryParam.fromDate, queryParam.toDate);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 }

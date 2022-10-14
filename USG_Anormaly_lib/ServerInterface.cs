@@ -10,6 +10,7 @@ using System.Net;
 using System.Web;
 using System.Windows.Forms;
 using USG_Anormaly_DL_lib;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace USG_Anormaly_lib
 {
@@ -858,14 +859,18 @@ namespace USG_Anormaly_lib
             }
             ServerConfig serverConfig = new ServerConfig();
             serverConfig.loadConfig();
-            //http://localhost/usg_mvi_anormaly/Logging/log-inference?fromDate=10-10-22&toDate=11-10-22
-            string fromFormat = $"{fromDate.Day}-{fromDate.Month}-{fromDate.Year} {fromDate.TimeOfDay.Hours}:{fromDate.TimeOfDay.Minutes}:{fromDate.TimeOfDay.Seconds}";
-            string toFormat = $"{toDate.Day}-{toDate.Month}-{toDate.Year} {toDate.TimeOfDay.Hours}:{toDate.TimeOfDay.Minutes}:{toDate.TimeOfDay.Seconds}";
-            var client = new RestClient($"{serverConfig.serverPath}/Logging/log-inference?fromDate={fromDate}&toDate={toDate}");
+
+            var client = new RestClient($"{serverConfig.serverPath}/Logging/retrieve-log-inference");
             client.Timeout = 3000;
-            var request = new RestRequest(Method.GET);
-            request.AddQueryParameter("fromDate", fromDate.ToString());
-            request.AddQueryParameter("toDate", toDate.ToString());
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Type", "application/json");
+            var aaa = new
+            {
+                fromDate = fromDate,
+                toDate = toDate,
+            };
+            var body = JsonConvert.SerializeObject(aaa);
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
             if(response.StatusCode == System.Net.HttpStatusCode.OK)
             {
@@ -883,12 +888,17 @@ namespace USG_Anormaly_lib
             }
             ServerConfig serverConfig = new ServerConfig();
             serverConfig.loadConfig();
-            //http://localhost/usg_mvi_anormaly/Logging/log-inference?fromDate=10-10-22&toDate=11-10-22
-            string fromFormat = fromDate.ToString("yyyy-MM-dd HH:mm:ss"); //$"{fromDate.Year}-{fromDate.Month}-{fromDate.Day} {fromDate.TimeOfDay.Hours}:{fromDate.TimeOfDay.Minutes}:{fromDate.TimeOfDay.Seconds}";
-            string toFormat = toDate.ToString("yyyy-MM-dd HH:mm:ss");//$"{toDate.Year}-{toDate.Month}-{toDate} {toDate.TimeOfDay.Hours}:{toDate.TimeOfDay.Minutes}:{toDate.TimeOfDay.Seconds}";
-            var client = new RestClient($"{serverConfig.serverPath}/Logging/log-training?fromDate={HttpUtility.UrlEncode(fromFormat)}&toDate={HttpUtility.UrlEncode(toFormat)}");
+            var client = new RestClient($"{serverConfig.serverPath}/Logging/retrieve-log-training");
             client.Timeout = 3000;
-            var request = new RestRequest(Method.GET);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Type", "application/json");
+            var aaa = new
+            {
+                fromDate = fromDate,
+                toDate = toDate,
+            };
+            var body = JsonConvert.SerializeObject(aaa);
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {

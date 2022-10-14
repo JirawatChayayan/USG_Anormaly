@@ -106,7 +106,7 @@
             // 
             // timer1_fetchServerLog
             // 
-            this.timer1_fetchServerLog.Interval = 10000;
+            this.timer1_fetchServerLog.Interval = 1000;
             this.timer1_fetchServerLog.Tick += new System.EventHandler(this.timer1_fetchServerLog_Tick);
             // 
             // UI_CurrentServerState
