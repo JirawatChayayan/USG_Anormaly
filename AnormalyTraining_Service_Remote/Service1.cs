@@ -16,6 +16,7 @@ using USG_Anormaly_DL_lib;
 using USG_Anormaly_lib;
 using static System.Net.Mime.MediaTypeNames;
 using System.IO.Compression;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AnormalyTraining_Service_Remote
 {
@@ -51,7 +52,7 @@ namespace AnormalyTraining_Service_Remote
         }
         private static void start()
         {
-            tFetch.Interval = 2000;
+            tFetch.Interval = 10000;
             tFetch.Enabled = true;
             tFetch.Start();
         }
@@ -196,22 +197,34 @@ namespace AnormalyTraining_Service_Remote
                 }
                 FinishedTrainingModel modelDetail = new FinishedTrainingModel();
                 List<ModelPath> modelPaths = new List<ModelPath>();
-                modelPaths.Add(frontPath);
-                modelPaths.Add(sidePath);
-                modelPaths.Add(side2Path);
+                modelPaths.Add(new ModelPath
+                {
+                    dataset = getRelativePathModel(frontPath.dataset),
+                    model = getRelativePathModel(frontPath.model)
+                });
+                modelPaths.Add(new ModelPath
+                {
+                    dataset = getRelativePathModel(sidePath.dataset),
+                    model = getRelativePathModel(sidePath.model)
+                });
+                modelPaths.Add(new ModelPath
+                {
+                    dataset = getRelativePathModel(side2Path.dataset),
+                    model = getRelativePathModel(side2Path.model)
+                });
                 modelDetail.modelPath = JsonConvert.SerializeObject(modelPaths);
                 modelPaths.Clear();
                 memory();
-                modelDetail.frontPath = PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Front).main_path;
+                modelDetail.frontPath = getRelativePathResult(PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Front).main_path);
                 memory();
-                modelDetail.sidePath1 = PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Side).main_path;
+                modelDetail.sidePath1 = getRelativePathResult(PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Side).main_path);
                 memory();
-                modelDetail.sidePath2 = PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Side2).main_path;
+                modelDetail.sidePath2 = getRelativePathResult(PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Side2).main_path);
                 memory();
                 modelDetail.recipe = trainingparam.recipeName;
 
                 string modelFolder = PathProcess.modelRecipeFolder(trainingparam.recipeName);
-                string pathModeZip = @"C:\AnormalyModelUpload\ModelUpload";
+                string pathModeZip = PathProcess.modelUploadPath;
                 if(!Directory.Exists(pathModeZip))
                 {
                     Directory.CreateDirectory(pathModeZip);
@@ -241,6 +254,17 @@ namespace AnormalyTraining_Service_Remote
             }
 
 
+        }
+
+        public static string getRelativePathModel(string fullPath)
+        {
+            var splitPath = fullPath.Split('\\');
+            return Path.Combine(splitPath[3], splitPath[4], splitPath[5]);
+        }
+        public static string getRelativePathResult(string fullPath)
+        {
+            var splitPath3 = fullPath.Split('\\');
+            return Path.Combine(splitPath3[3], splitPath3[4], splitPath3[5], splitPath3[6]);
         }
         public static string zipFile(string dirZip, string zipPath, string zipName)
         {

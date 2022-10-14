@@ -12,19 +12,27 @@ namespace TestFunction
         static void Main(string[] args)
         {
 
-            string partToken = ".part_";
-            string FileName = "C:\\AnormalyModelUpload\\FileUpload\\SideCamDataSet1.zip.part_1.640";
+            //string partToken = ".part_";
+            //string FileName = "C:\\AnormalyModelUpload\\FileUpload\\SideCamDataSet1.zip.part_1.640";
 
-            int idxOf = FileName.IndexOf(partToken);
-            string baseFileName = FileName.Substring(0, idxOf);
-            string trailingTokens = FileName.Substring(idxOf + partToken.Length);
-
-
-            FileName = "C:\\AnormalyModelUpload\\FileUpload\\SideCamDataSet1.zip";
-            string ext = Path.GetExtension(FileName);
-            string fnames = Path.GetFileName(FileName);
+            //int idxOf = FileName.IndexOf(partToken);
+            //string baseFileName = FileName.Substring(0, idxOf);
+            //string trailingTokens = FileName.Substring(idxOf + partToken.Length);
 
 
+            //FileName = "C:\\AnormalyModelUpload\\FileUpload\\SideCamDataSet1.zip";
+            //string ext = Path.GetExtension(FileName);
+            //string fnames = Path.GetFileName(FileName);
+
+            string path = @"G:\AnormalyModelUpload\DLModel\TEST-152-001\Model\front_model.hdl";
+            var splitPath = path.Split('\\');
+            var newpath = Path.Combine(splitPath[3], splitPath[4], splitPath[5]);
+            var splitPath2 = path.Split('/');
+
+
+            string aaa = @"G:\AnormalyModelUpload\DLModel\TEST-152-001\Model\result\front";
+            var splitPath3 = aaa.Split('\\');
+            var newpath2 = Path.Combine(splitPath3[3], splitPath3[4], splitPath3[5], splitPath3[6]);
 
             //var a = GetMaximumDrivePath();
             //var a = findNetworkPath();

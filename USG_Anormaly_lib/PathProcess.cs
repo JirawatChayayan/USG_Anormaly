@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using USG_Anormaly_lib;
@@ -89,6 +90,15 @@ namespace USG_Anormaly_DL_lib
                 return modelPath;
             }
         }
+        public static string modelUploadPath
+        {
+            get
+            {
+                string uploadPath = Path.Combine(mainPath, "ModelUpload");
+                createFolder(uploadPath);
+                return uploadPath;
+            }
+        }
         public static string modelRecipeFolder(string recipeName)
         {
             string path = Path.Combine(modelPath, recipeName);
@@ -96,6 +106,7 @@ namespace USG_Anormaly_DL_lib
             return path;
 
         }
+
         public static string frontImgDatasetFolder(string recipeName)
         {
             string path = Path.Combine(modelRecipeFolder(recipeName), "FrontCamDataSet");

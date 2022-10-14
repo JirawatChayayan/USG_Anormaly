@@ -159,17 +159,33 @@ namespace USG_Anormaly_DL_lib
                 }
                 FinishedTrainingModel modelDetail = new FinishedTrainingModel();
                 List<ModelPath> modelPaths = new List<ModelPath>();
-                modelPaths.Add(frontPath);
-                modelPaths.Add(sidePath);
-                modelPaths.Add(side2Path);
+
+
+                modelPaths.Add(new ModelPath
+                {
+                    dataset = relativePath(frontPath.dataset),
+                    model = relativePath(frontPath.model)
+                });
+
+                modelPaths.Add(new ModelPath
+                {
+                    dataset = relativePath(sidePath.dataset),
+                    model = relativePath(sidePath.model)
+                });
+
+                modelPaths.Add(new ModelPath
+                {
+                    dataset = relativePath(side2Path.dataset),
+                    model = relativePath(side2Path.model)
+                });
                 modelDetail.modelPath = JsonConvert.SerializeObject(modelPaths);
                 modelPaths.Clear();
                 memory();
-                modelDetail.frontPath = PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Front).main_path;
+                modelDetail.frontPath = relativePathResult(PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Front).main_path);
                 memory();
-                modelDetail.sidePath1 = PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Side).main_path;
+                modelDetail.sidePath1 = relativePathResult(PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Side).main_path);
                 memory();
-                modelDetail.sidePath2 = PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Side2).main_path;
+                modelDetail.sidePath2 = relativePathResult(PathProcess.trainingrResultSavePath(trainingparam.recipeName, CameraIdx.Side2).main_path);
                 memory();
                 modelDetail.recipe = trainingparam.recipeName;
 
@@ -189,6 +205,18 @@ namespace USG_Anormaly_DL_lib
             }
            
             
+        }
+
+        private static string relativePath(string fullPath)
+        {
+            var splitPath = fullPath.Split('\\');
+            return Path.Combine(splitPath[3], splitPath[4], splitPath[5]);
+        }
+
+        private static string relativePathResult(string fullpath)
+        {
+            var splitPath3 = fullpath.Split('\\');
+            return Path.Combine(splitPath3[3], splitPath3[4], splitPath3[5], splitPath3[6]);
         }
 
         private static void memory()
