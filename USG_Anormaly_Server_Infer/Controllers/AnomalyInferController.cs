@@ -18,7 +18,7 @@ namespace USG_Anormaly_Server_Infer.Controllers
         [Route("api/infer")]
         [HttpPost]
         [ResponseType(typeof(string))]
-        public HttpResponseMessage Post([FromBody] USG_Anormaly_lib.AIInferenceModel dataItem)
+        public HttpResponseMessage Post([FromBody] AIInferenceModel dataItem)
         {
             if (dataItem == null)
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, "Input body is null !!!");

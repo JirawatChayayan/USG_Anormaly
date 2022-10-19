@@ -186,8 +186,8 @@ namespace USG_Anormaly_Server.Controllers
                     {
                         Directory.CreateDirectory(pathExportZip);
                     }
-                    zipProcess.unZip(path, pathExportZip);
-                    zipProcess.deleteZip(path);
+                    zipProcess.unZip(baseFName, pathExportZip);
+                    zipProcess.deleteZip(baseFName);
                     try
                     {
                         var dataTrain = await (new AIDatabaseProcess(_dbcontext)).getTrainingData(Path.GetFileNameWithoutExtension(baseFName));

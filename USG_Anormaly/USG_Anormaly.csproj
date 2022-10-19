@@ -179,6 +179,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sub_UI_LightingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sub_UI_LightingControl.Designer.cs">
+      <DependentUpon>Sub_UI_LightingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sub_UI_LigthinController2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sub_UI_LigthinController2.Designer.cs">
+      <DependentUpon>Sub_UI_LigthinController2.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Anormaly_System.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,6 +226,12 @@
     </Compile>
     <Compile Include="UI_ImageDisplay.Designer.cs">
       <DependentUpon>UI_ImageDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_LightingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_LightingControl.Designer.cs">
+      <DependentUpon>UI_LightingControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI_ParameterTrain.cs">
       <SubType>UserControl</SubType>
@@ -282,6 +300,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sub_UI_LightingControl.resx">
+      <DependentUpon>Sub_UI_LightingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub_UI_LigthinController2.resx">
+      <DependentUpon>Sub_UI_LigthinController2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI_Anormaly_System.resx">
       <DependentUpon>UI_Anormaly_System.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_ImageDisplay.resx">
       <DependentUpon>UI_ImageDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_LightingControl.resx">
+      <DependentUpon>UI_LightingControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_ParameterTrain.resx">
       <DependentUpon>UI_ParameterTrain.cs</DependentUpon>
@@ -377,6 +404,7 @@
   <ItemGroup>
     <None Include="Resources\MicrosoftTeams-image %2821%29.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

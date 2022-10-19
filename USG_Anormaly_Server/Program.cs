@@ -43,6 +43,7 @@ app.MapControllers();
 app.MapHub<NotificationHub>("/notic");
 
 
+
 //Task.Factory.StartNew(async () =>
 //{
 //    var con = new NotificationHub();

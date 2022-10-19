@@ -1,0 +1,11 @@
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\bin\Debug\CSTLightingController.exe.config
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\bin\Debug\CSTLightingController.exe
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\bin\Debug\CSTLightingController.pdb
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\obj\Debug\CSTLightingController.csproj.AssemblyReference.cache
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\obj\Debug\CSTLightingController.csproj.SuggestedBindingRedirects.cache
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\obj\Debug\CSTLightingController.Form1.resources
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\obj\Debug\CSTLightingController.Properties.Resources.resources
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\obj\Debug\CSTLightingController.csproj.GenerateResource.cache
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\obj\Debug\CSTLightingController.csproj.CoreCompileInputs.cache
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\obj\Debug\CSTLightingController.exe
+D:\Project\USG MVI\USG_Anormaly\CSTLightingController\obj\Debug\CSTLightingController.pdb

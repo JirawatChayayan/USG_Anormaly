@@ -43,12 +43,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_modelName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.bt_lightingControl_Status = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bt_lightingControl_Status);
             this.groupBox1.Controls.Add(this.bt_aiserver_Status);
             this.groupBox1.Controls.Add(this.bt_camera2_status);
             this.groupBox1.Controls.Add(this.bt_camera1_status);
@@ -63,9 +65,9 @@
             // 
             this.bt_aiserver_Status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_aiserver_Status.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bt_aiserver_Status.Location = new System.Drawing.Point(290, 18);
+            this.bt_aiserver_Status.Location = new System.Drawing.Point(332, 18);
             this.bt_aiserver_Status.Name = "bt_aiserver_Status";
-            this.bt_aiserver_Status.Size = new System.Drawing.Size(129, 45);
+            this.bt_aiserver_Status.Size = new System.Drawing.Size(98, 45);
             this.bt_aiserver_Status.TabIndex = 1;
             this.bt_aiserver_Status.Text = "AI Server";
             this.bt_aiserver_Status.UseVisualStyleBackColor = false;
@@ -74,9 +76,9 @@
             // 
             this.bt_camera2_status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bt_camera2_status.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bt_camera2_status.Location = new System.Drawing.Point(155, 18);
+            this.bt_camera2_status.Location = new System.Drawing.Point(124, 18);
             this.bt_camera2_status.Name = "bt_camera2_status";
-            this.bt_camera2_status.Size = new System.Drawing.Size(129, 45);
+            this.bt_camera2_status.Size = new System.Drawing.Size(98, 45);
             this.bt_camera2_status.TabIndex = 1;
             this.bt_camera2_status.Text = "Camera Side";
             this.bt_camera2_status.UseVisualStyleBackColor = false;
@@ -88,7 +90,7 @@
             this.bt_camera1_status.ForeColor = System.Drawing.Color.Black;
             this.bt_camera1_status.Location = new System.Drawing.Point(20, 18);
             this.bt_camera1_status.Name = "bt_camera1_status";
-            this.bt_camera1_status.Size = new System.Drawing.Size(129, 45);
+            this.bt_camera1_status.Size = new System.Drawing.Size(98, 45);
             this.bt_camera1_status.TabIndex = 1;
             this.bt_camera1_status.Text = "Camera Front";
             this.bt_camera1_status.UseVisualStyleBackColor = false;
@@ -195,6 +197,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "ModelName";
             // 
+            // bt_lightingControl_Status
+            // 
+            this.bt_lightingControl_Status.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bt_lightingControl_Status.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bt_lightingControl_Status.Location = new System.Drawing.Point(228, 18);
+            this.bt_lightingControl_Status.Name = "bt_lightingControl_Status";
+            this.bt_lightingControl_Status.Size = new System.Drawing.Size(98, 45);
+            this.bt_lightingControl_Status.TabIndex = 1;
+            this.bt_lightingControl_Status.Text = "Lighting Control";
+            this.bt_lightingControl_Status.UseVisualStyleBackColor = false;
+            // 
             // UI_HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,5 +239,6 @@
         private System.Windows.Forms.Label lb_Loading;
         private UI_ImageDisplay uI_ImageDisplay1;
         private System.Windows.Forms.Button bt_MoreInfo;
+        private System.Windows.Forms.Button bt_lightingControl_Status;
     }
 }

@@ -294,3 +294,6 @@ D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\bin\Debug\RestSharp.xml
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.csproj.CopyComplete
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.exe
 D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.pdb
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.UI_LightingControl.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.Sub_UI_LightingControl.resources
+D:\Project\USG MVI\USG_Anormaly\USG_Anormaly\obj\Debug\USG_Anormaly.Sub_UI_LigthinController2.resources

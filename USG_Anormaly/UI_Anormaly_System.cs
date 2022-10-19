@@ -180,9 +180,6 @@ namespace USG_Anormaly
             uI_CameraSetting1.cameraConnected(CameraIdx.Side, cameraSide.camera_IsOpen);
         }
 
-
-
-
         public void initialLoad()
         {
             enableCamera();

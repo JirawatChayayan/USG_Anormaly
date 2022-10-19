@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace TestFunction
@@ -12,6 +13,11 @@ namespace TestFunction
         static void Main(string[] args)
         {
 
+            string reg = "^(a|b)(0)([0-2][0-9][0-9])";
+
+            Regex r = new Regex(reg);
+            Match m = r.Match("a0255wkk");
+            Console.WriteLine(m.Groups);
             //string partToken = ".part_";
             //string FileName = "C:\\AnormalyModelUpload\\FileUpload\\SideCamDataSet1.zip.part_1.640";
 

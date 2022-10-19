@@ -140,12 +140,20 @@ namespace USG_Anormaly
             string imgPath = _imgPath[lb.SelectedItem.ToString()];
             if(File.Exists(imgPath))
             {
-                HObject img = new HObject();
-                img.GenEmptyObj();
-                HOperatorSet.ReadImage(out img, imgPath);
-                HOperatorSet.DispObj(img, pb_imageTest.HalconWindow);
-                pb_imageTest.SetFullImagePart();
-                img.Dispose();
+                try
+                {
+                    HObject img = new HObject();
+                    img.GenEmptyObj();
+                    HOperatorSet.ReadImage(out img, imgPath);
+                    HOperatorSet.DispObj(img, pb_imageTest.HalconWindow);
+                    pb_imageTest.SetFullImagePart();
+                    img.Dispose();
+                }
+                catch
+                {
+
+                }
+
             }
             else
             {

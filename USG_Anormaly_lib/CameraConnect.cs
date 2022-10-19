@@ -167,7 +167,7 @@ namespace USG_Anormaly_lib
                 #endregion
                 HOperatorSet.OpenFramegrabber("GenICamTL", 0, 0, 0, 0, 0, 0,
                                               "progressive", -1, "gray", -1,
-                                              "false", "default", "Hikrobot MV-CE200-10UM (02G05791359)",
+                                              "false", "default", idx == CameraIdx.Front ? "1" : "2",
                                               0, -1, out _acqHandle);
                 HOperatorSet.SetFramegrabberParam(_acqHandle, "Width", 5472);
                 HOperatorSet.SetFramegrabberParam(_acqHandle, "Height", 3648);

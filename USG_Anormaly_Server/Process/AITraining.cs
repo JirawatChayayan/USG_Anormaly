@@ -184,10 +184,10 @@ namespace USG_Anormaly_Server
             {
                 var trainingDetail = JsonConvert.DeserializeObject<UploadFileModel>(result[0].TrainingParameter);
 
-                var filters = new string[] { "jpg", "jpeg", "png", "tiff","tif", "bmp", "hobj" };
-                var frontPathFile = GetFilesFrom(result[0].FrontPath, filters, true);
-                var sidePathFile = GetFilesFrom(result[0].SidePath1, filters, true);
-                var side2PathFile = GetFilesFrom(result[0].SidePath2, filters, true);
+                //var filters = new string[] { "jpg", "jpeg", "png", "tiff","tif", "bmp", "hobj" };
+                //var frontPathFile = GetFilesFrom(result[0].FrontPath, filters, true);
+                //var sidePathFile = GetFilesFrom(result[0].SidePath1, filters, true);
+                //var side2PathFile = GetFilesFrom(result[0].SidePath2, filters, true);
                 //string FrontImage = Path.Combine(result[0].FrontPath)
 
                 //var ImgPath = (new PathProcess())._imageSamplePath(result[0].RecipeName);
@@ -203,34 +203,37 @@ namespace USG_Anormaly_Server
                 ImageResultModel side1 = new ImageResultModel();
                 ImageResultModel side2 = new ImageResultModel();
 
-                front.sample_image = img2Base64(Path.Combine(result[0].FrontPath, "sample_image.jpg"));
-                side1.sample_image = img2Base64(Path.Combine(result[0].SidePath1, "sample_image.jpg"));
-                side2.sample_image = img2Base64(Path.Combine(result[0].SidePath2, "sample_image.jpg"));
+
+               
+
+                front.sample_image = img2Base64(Path.Combine(PathProcess._modelPath, result[0].FrontPath, "sample_image.jpg"));
+                side1.sample_image = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath1, "sample_image.jpg"));
+                side2.sample_image = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath2, "sample_image.jpg"));
 
                 if(reqImageAll)
                 {
-                    front.absolute_confusion_matrix = img2Base64(Path.Combine(result[0].FrontPath, "absolute_confusion_matrix.png"));
-                    front.score_legend = img2Base64(Path.Combine(result[0].FrontPath, "score_legend.png"));
-                    front.pie_charts_precision = img2Base64(Path.Combine(result[0].FrontPath, "pie_charts_precision.png"));
-                    front.pie_charts_recall = img2Base64(Path.Combine(result[0].FrontPath, "pie_charts_recall.png"));
-                    front.score_histogram = img2Base64(Path.Combine(result[0].FrontPath, "score_histogram.png"));
+                    front.absolute_confusion_matrix = img2Base64(Path.Combine(PathProcess._modelPath, result[0].FrontPath, "absolute_confusion_matrix.png"));
+                    front.score_legend              = img2Base64(Path.Combine(PathProcess._modelPath, result[0].FrontPath, "score_legend.png"));
+                    front.pie_charts_precision      = img2Base64(Path.Combine(PathProcess._modelPath, result[0].FrontPath, "pie_charts_precision.png"));
+                    front.pie_charts_recall         = img2Base64(Path.Combine(PathProcess._modelPath, result[0].FrontPath, "pie_charts_recall.png"));
+                    front.score_histogram           = img2Base64(Path.Combine(PathProcess._modelPath, result[0].FrontPath, "score_histogram.png"));
 
 
-                    side1.absolute_confusion_matrix = img2Base64(Path.Combine(result[0].SidePath1, "absolute_confusion_matrix.png"));
-                    side1.score_legend = img2Base64(Path.Combine(result[0].SidePath1, "score_legend.png"));
-                    side1.pie_charts_precision = img2Base64(Path.Combine(result[0].SidePath1, "pie_charts_precision.png"));
-                    side1.pie_charts_recall = img2Base64(Path.Combine(result[0].SidePath1, "pie_charts_recall.png"));
-                    side1.score_histogram = img2Base64(Path.Combine(result[0].SidePath1, "score_histogram.png"));
+                    side1.absolute_confusion_matrix = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath1, "absolute_confusion_matrix.png"));
+                    side1.score_legend              = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath1, "score_legend.png"));
+                    side1.pie_charts_precision      = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath1, "pie_charts_precision.png"));
+                    side1.pie_charts_recall         = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath1, "pie_charts_recall.png"));
+                    side1.score_histogram           = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath1, "score_histogram.png"));
 
-                    side2.absolute_confusion_matrix = img2Base64(Path.Combine(result[0].SidePath2, "absolute_confusion_matrix.png"));
-                    side2.score_legend = img2Base64(Path.Combine(result[0].SidePath2, "score_legend.png"));
-                    side2.pie_charts_precision = img2Base64(Path.Combine(result[0].SidePath2, "pie_charts_precision.png"));
-                    side2.pie_charts_recall = img2Base64(Path.Combine(result[0].SidePath2, "pie_charts_recall.png"));
-                    side2.score_histogram = img2Base64(Path.Combine(result[0].SidePath2, "score_histogram.png"));
+                    side2.absolute_confusion_matrix = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath2, "absolute_confusion_matrix.png"));
+                    side2.score_legend              = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath2, "score_legend.png"));
+                    side2.pie_charts_precision      = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath2, "pie_charts_precision.png"));
+                    side2.pie_charts_recall         = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath2, "pie_charts_recall.png"));
+                    side2.score_histogram           = img2Base64(Path.Combine(PathProcess._modelPath, result[0].SidePath2, "score_histogram.png"));
 
-                    string frontPath = Path.Combine(result[0].FrontPath, "threshold_result.json");
-                    string side1Path = Path.Combine(result[0].SidePath1, "threshold_result.json");
-                    string side2Path = Path.Combine(result[0].SidePath2, "threshold_result.json");
+                    string frontPath = Path.Combine(PathProcess._modelPath, result[0].FrontPath, "threshold_result.json");
+                    string side1Path = Path.Combine(PathProcess._modelPath, result[0].SidePath1, "threshold_result.json");
+                    string side2Path = Path.Combine(PathProcess._modelPath, result[0].SidePath2, "threshold_result.json");
                     if (File.Exists(frontPath))
                     {
                         front.anomalyThreshold = JsonConvert.DeserializeObject<AnomalyThreshold>(File.ReadAllText(frontPath));
